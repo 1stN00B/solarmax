@@ -777,7 +777,8 @@ body {
 
 @media (max-width: 768px) {
   .services-container {
-    grid-template-rows: 1fr;
+    display: grid;
+    grid-template-rows: auto;
     padding: 0 2rem;
   }
   
