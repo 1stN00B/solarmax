@@ -776,11 +776,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .services-container {
+   .services-container {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr; /* Makes cards stack in rows */
+    gap: 2rem; /* Keeps spacing between cards */
     padding: 0 2rem;
-  }
+   }
   
   .h1 {
     font-size: 2rem;
