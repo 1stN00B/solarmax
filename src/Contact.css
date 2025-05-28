@@ -1,0 +1,439 @@
+/* Solar Contact Page Styles */
+.solar-contact-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 30px;
+}
+
+/* Header Section */
+.split-header-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .split-header {
+    display: flex;
+    height: 80vh;
+    max-height: 800px;
+    position: relative;
+  }
+  
+  .header-side {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .white-side {
+    background: white;
+  }
+  
+  .blue-side {
+    background: #59aada;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    width: 200%;
+    height: 80%;
+    top: 10%;
+    padding-right: 80px;
+    padding-left: 20px;
+  }
+  
+  .white-side .image-overlay {
+    right: 0;
+  }
+  
+  .blue-side .image-overlay {
+    left: 0;
+  }
+  
+  .split-image {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .header-text {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    color: #1a4b8c;
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .header-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .header-text p {
+    font-size: 1.1rem;
+  }
+  
+  .header-cta {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 400px;
+    text-align: center;
+    font-size:x-large;
+    font-weight: bolder;
+  }
+  
+  .header-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .header-cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 1024px) {
+    .header-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .header-cta h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .split-header {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .image-overlay {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      top: auto;
+    }
+    
+    .white-side .image-overlay,
+    .blue-side .image-overlay {
+      right: auto;
+      left: auto;
+    }
+    
+    .split-image {
+      width: 100%;
+    }
+    
+    .header-text,
+    .header-cta {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      transform: none;
+      padding: 2rem;
+      max-width: 100%;
+      text-align: center;
+    }
+    
+    .header-text {
+      color: #1a4b8c;
+    }
+    
+    .blue-side {
+      background: white;
+    }
+    
+    .header-cta {
+      color: #1a4b8c;
+    }
+    
+    .cta-button {
+      background: #1a4b8c;
+      color: white;
+    }
+  }
+
+  /*cards */
+
+/* Main Content */
+.solar-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Form Section */
+.contact-form-section {
+  background: #f8f9fa;
+  padding: 4rem 0;
+  margin: 2rem 0;
+}
+
+.form-wrapper {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: -6rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.form-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.solar-form {
+  margin-top: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #0c9de6;
+  color: #2243e6;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  color:  #a2c7da;
+  background-color: #2243e6;
+}
+
+/* Info Section */
+.solar-info-section {
+  padding: 4rem 0;
+}
+
+.info-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.solar-info-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #e67e22;
+}
+
+.feature-card h3 {
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.process-section {
+  background: #516d87;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin: 20px auto;
+
+}
+
+.process-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.process-steps li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.process-steps li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background: #e67e22;
+  border-radius: 50%;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  background: #3498db;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonial-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .solar-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .header-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    padding: 1rem 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-wrapper {
+    padding: 2rem;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-header {
+    padding: 3rem 1rem;
+  }
+  
+  .solar-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stat-item {
+    min-width: 120px;
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+}
