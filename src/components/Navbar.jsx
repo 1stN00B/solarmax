@@ -1,42 +1,60 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import '../App.css';
 
 const AutoHideNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const collapseRef = useRef(null);
+
+  const handleToggleClick = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
 
   const handleNavLinkClick = () => {
-    const navbarCollapse = document.getElementById('navbarSupportedContent');
-    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-      // Access Bootstrap through window object
-      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, { toggle: false });
-      bsCollapse.hide();
-    }
+    setIsNavbarOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (collapseRef.current) {
+      const collapseElement = collapseRef.current;
+      
+      if (isNavbarOpen) {
+        collapseElement.classList.add('show');
+      } else {
+        collapseElement.classList.remove('show');
+      }
+    }
+  }, [isNavbarOpen]);
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" onClick={handleNavLinkClick}>LOGO</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          onClick={handleToggleClick}
+          aria-expanded={isNavbarOpen}
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        <div className="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <div 
+          className="collapse navbar-collapse flex-grow-0" 
+          id="navbarSupportedContent"
+          ref={collapseRef}
+        >
           <ul className="navbar-nav">
             <li className="nav-item pe-3">
               <Link className="nav-link active" aria-current="page" to="/" onClick={handleNavLinkClick}>Home</Link>
@@ -59,9 +77,9 @@ const AutoHideNavbar = () => {
           </ul>
           
           <Link className="buttonnavbar ms-3" to="/contact" onClick={handleNavLinkClick}>
-            Get in touch
             <div className="hoverEffect">
               <div className='navbarmain'></div>
+            Get in touch
             </div>
           </Link>
         </div>
