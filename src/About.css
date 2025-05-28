@@ -513,13 +513,13 @@
 
   @media (min-width: 777px) { 
    .message-title {
-     font-size: 1rem;
+     font-size: 0.3rem;
      max-width: 800px; /* Prevents text from becoming too wide */
      margin: auto; /* Centers title text */
    }
   
   .message-text {
-    font-size: 0.8rem;
+    font-size: 0.1rem;
     max-width: 600px; /* Constrains text width */
     margin: 20px auto 0; /* Centers description text */
   }
