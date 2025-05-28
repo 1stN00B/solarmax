@@ -90,6 +90,7 @@ export default function Main() {
               src="/images/Pakistan-map.svg" 
               alt="Pakistan map" 
               className="solar-main-image responsive-map"
+              loading="lazy"
             />
             <div 
               className="location-pointer" 
@@ -149,10 +150,9 @@ export default function Main() {
       <div className="solar-ready-container bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 px-6 rounded-xl shadow-xl max-w-4xl mx-auto my-8 text-center">
         <h2 className="solar-ready-title text-3xl md:text-4xl font-bold mb-4">Ready to Switch to Solar?</h2>
         <p className="solar-ready-desc text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
-          Join thousands of satisfied customers who have reduced their energy<br />
-          bills and carbon footprint.
+          Unlock significant savings and energy independence with the power of <br/>solar—join your neighbors who are already enjoying lower bills and a cleaner, sustainable future!
         </p>
-        <button className="buttongetintouch">Get Started</button>
+        <Link className="buttongetintouch" to='/contact'>Take the First Step</Link>
       </div>
 
      {/*----------------why choose us-------------------*/}

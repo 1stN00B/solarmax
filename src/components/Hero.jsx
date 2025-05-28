@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import '../App.css';
 
 export default function Hero() {
@@ -37,6 +38,11 @@ export default function Hero() {
 
   return (
     <div className="hero-container">
+      <Helmet>
+        <link rel="preload" href="/images/solar-panels.jpg" as="image" />
+        <link rel="preload" href="/images/solar-panels2.jpg" as="image" />
+        <link rel="preload" href="/images/solar-panels1.jpg" as="image" />
+      </Helmet>
       <div className="hero-slideshow">
         {/* Slide 1 */}
         <div className="hero-slide">
@@ -44,6 +50,7 @@ export default function Hero() {
             src="/images/solar-panels.jpg" 
             alt="Solar solutions" 
             className="hero-image"
+            loading="lazy"
           />
           <div className="hero-content">
             <h1 className="text-size">Harness the  <span className="colorful">Power</span> of the <span className="colorful">Sun</span></h1>
@@ -51,11 +58,6 @@ export default function Hero() {
               Sustainable energy solutions for a brighter tomorrow.<br />
               Reduce your carbon footprint and save on energy bills.
             </p>
-            <div className="hero-divider"></div>
-            <div className="hero-cta">
-              <button className="cta-button primary">Get a Free Quote</button>
-              <button className="cta-button secondary">Learn More</button>
-            </div>
           </div>
         </div>
 
@@ -65,6 +67,7 @@ export default function Hero() {
             src="/images/solar-panels2.jpg" 
             alt="Commercial solutions" 
             className="hero-image"
+            loading="lazy"
           />
           <div className="hero-content">
             <h1 className="text-size"> <span className="colorful">Commercial</span> Solar <span className="colorful">Solution</span></h1>
@@ -72,11 +75,6 @@ export default function Hero() {
               Power your business with clean energy.<br />
               Customizable industrial-grade solar systems.
             </p>
-            <div className="hero-divider"></div>
-            <div className="hero-cta">
-              <button className="cta-button primary">Business Plans</button>
-              <button className="cta-button secondary">Case Studies</button>
-            </div>
           </div>
         </div>
 
@@ -86,6 +84,7 @@ export default function Hero() {
             src="/images/solar-panels1.jpg" 
             alt="Residential solutions" 
             className="hero-image"
+            loading="lazy"
           />
           <div className="hero-content">
             <h1 className="text-size"> <span className="colorful"> Residential</span> Solar Systems</h1>
@@ -93,14 +92,9 @@ export default function Hero() {
               Home energy independence made easy.<br />
               Start saving with our affordable packages.
             </p>
-            <div className="hero-divider"></div>
-            <div className="hero-cta">
-              <button className="cta-button primary">Home Packages</button>
-              <button className="cta-button secondary">Calculate Savings</button>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

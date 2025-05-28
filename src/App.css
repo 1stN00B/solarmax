@@ -1,4 +1,8 @@
 /* Body Padding to Prevent Content Hidden Behind Navbar */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 70px;
   background-color: #ffffff;
@@ -229,7 +233,7 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   animation: textSlideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -837,6 +841,8 @@ body {
   width: fit-content;
   border: none;
   color: #007bff;
+  text-decoration: none;
+  background-color: floralwhite;
 }
 
 .buttongetintouch:before {
