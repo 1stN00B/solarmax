@@ -1,109 +1,143 @@
-import React, { useState } from 'react';  
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
+// FIXED ServiceCard component
+const ServiceCard = React.memo(({ title, description, items = [], link, imgSrc, imgAlt }) => (
+  <div className="service-card">
+    <img 
+      className='imageservices-mainpage' 
+      src={imgSrc} 
+      alt={imgAlt}
+      loading="lazy"
+    />
+    <div className="service-card-content">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className="more-info">
+        <ul>
+          {items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <Link className="modern-btn" to={link}>
+        Learn More
+      </Link>
+    </div>
+  </div>
+));
 
- export default function Main() {
-  // Add FAQ state management
+// FIXED FAQItem component
+const FAQItem = React.memo(({ question, answer, index, activeIndex, toggleFAQ }) => (
+  <div className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
+    <button className="faq-question" onClick={() => toggleFAQ(index)}>
+      {question}
+      <svg className="faq-icon" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    {activeIndex === index && (
+      <div className="faq-answer">
+        <p>{answer}</p>
+      </div>
+    )}
+  </div>
+));
+
+export default function Main() {
+  // FIXED FAQ toggle function
   const [activeIndex, setActiveIndex] = useState(null);
+  const toggleFAQ = useCallback((index) => {
+    setActiveIndex(prev => prev === index ? null : index);
+  }, []); // Added empty dependency array
 
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+  // Service card data
+  const services = [
+    {
+      title: "Residential Solar",
+      description: "Transform your home with our top-rated residential solar services...",
+      items: [
+        "Smart Energy Independence",
+        "Custom Roof Integration",
+        "Outage-Ready Backup Power"
+      ],
+      link: "/service#residential",
+      imgSrc: "/images/residentials-panels1.jpg",
+      imgAlt: "Residential Solar Panels"
+    },
+    {
+      title: "Commercial Systems",
+      description: "For businesses, our tailored commercial solar services...",
+      items: [
+        "Operational Cost Reduction",
+        "Scalable Power Solution",
+        "Visible Green Commitment"
+      ],
+      link: "/service#commercial",
+      imgSrc: "/images/commercial-panels1.jpg",
+      imgAlt: "Commercial Solar Panels"
+    }
+  ];
 
   return (
-    <div>
-    <div className="image-container">
-      <div className="solar-content-wrapper">
-        {/* Left Side - Image with Pointer */}
-        <div className="solar-image-container">
-          <img 
-            src="/images/Pakistan-map.svg" 
-            alt="Pakistan map" 
-            className="solar-main-image"
-          />
-          {/* Red pulsating location pointer */}
-          <div 
-            className="location-pointer" 
-            style={{
-              top: "45%",  // Adjust these values to position
-              left: "73.5%"   // the pointer on Lahore's location
-            }}
-          ></div>
-        </div>
-
-        {/* Right Side - Content (unchanged) */}
-        <div className="solar-content">
-          <h1>Premium Solar Solutions in Lahore</h1>
-          <p className="solar-subtitle">
-            Harness Pakistan's abundant sunlight with our certified solar systems
-          </p>
-
-          <div className="services-container1">
-            <div className="card">
-              <h3>Residential Systems</h3>
-              <p>Complete home solar solutions with NEPRA-compliant installations</p>
-            </div>
-
-            <div className="card">
-              <h3>Maintenance Services</h3>
-              <p>Professional upkeep and performance optimization</p>
-            </div>
+    <div className="main-container">
+      {/* Pakistan Map Section - Now Responsive */}
+      <div className="image-container">
+        <div className="solar-content-wrapper">
+          <div className="solar-image-container">
+            <img 
+              src="/images/Pakistan-map.svg" 
+              alt="Pakistan map" 
+              className="solar-main-image responsive-map"
+            />
+            <div 
+              className="location-pointer" 
+              style={{
+                top: "45%",
+                left: "73.5%"
+              }}
+            ></div>
           </div>
 
-          <div className="solar-cta">
-            <button className="solar-btn primary">Get Free Estimate →</button>
-            <button className="solar-btn secondary">View Case Studies →</button>
+          {/* Right Content */}
+          <div className="solar-content">
+            <h1>Premium Solar Solutions in Lahore</h1>
+            <p className="solar-subtitle">
+              Harness Pakistan's abundant sunlight with our certified solar systems
+            </p>
+
+            <div className="services-container1">
+              <div className="card">
+                <h3>Residential Systems</h3>
+                <p>Complete home solar solutions with NEPRA-compliant installations</p>
+              </div>
+
+              <div className="card">
+                <h3>Maintenance Services</h3>
+                <p>Professional upkeep and performance optimization</p>
+              </div>
+            </div>
+
+            <div className="solar-cta">
+              <button className="solar-btn primary">Get Free Estimate →</button>
+              <button className="solar-btn secondary">View Case Studies →</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-   
-    {/**----------------------------- service cards start here-------------------------**/}
+
+      {/* Responsive Service Cards */}
       <div className="container">
         <div className='center'>
-        <h1 className="h1"> Our Services</h1>
-        <h5 className="service-line">Innovative Solar Solutions for Energy Independence</h5>
+          <h1 className="h1">Our Services</h1>
+          <h5 className="service-line">Innovative Solar Solutions for Energy Independence</h5>
         </div>
-        <div className="services-container">
-          {/* Card 1 */}
-          <div className="service-card">
-            <img className='imageservices-mainpage' src='/images/residentials-panels1.jpg' alt="Residential Solar Panels"/>
-            <div className="service-card-content">
-              <h3>Residential Solar</h3>
-              <p>Transform your home with our top-rated residential solar services, cutting your energy bills while increasing your property value effortlessly.</p>
-              <div className="more-info">
-                  <ul>
-                    <li>Smart Energy Independence</li>
-                    <li>Custom Roof Integaation</li>
-                    <li>Outtage-Ready Backup Power</li>
-                  </ul>
-              </div>
-              <Link className="modern-btn" to="/service#residential">
-                Learn More
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="service-card">
-            <img className='imageservices-mainpage' src='/images/commercial-panels1.jpg' alt="Commercial Solar Panels"/>
-            <div className="service-card-content">
-              <h3>Commercial Systems</h3>
-              <p>For businesses, our tailored commercial solar services provide reliable energy savings and enhance your brand's commitment to sustainability, all while maximizing your return on investment.</p>
-              <div className="more-info">
-                <ul>
-                    <li>Operational Cost Reduction</li>
-                    <li>Scalable Power SOlution</li>
-                    <li>Visible Green Commitment</li>
-                </ul>
-              </div>
-              <Link className="modern-btn" to="/service#commercial">
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div> {/* This closes the services-container */}
+        <div className="services-container responsive-cards">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
 
         <Link className="service-button-mainpage" to="/service" id="Services-btn">
           <span>More Packages</span>
@@ -124,87 +158,87 @@ import '../App.css';
      {/*----------------why choose us-------------------*/}
       <section class="solar-services-section">
     <div class="container-choose-us">
-        <div class="solar-text-content">
-            <p class="solar-subtitle1">Why Choose Our Solar Services?</p>
-            <h2 class="solar-title">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
-            <p class="solar-description">
+        <div className="solar-text-content">
+            <p className="solar-subtitle1">Why Choose Our Solar Services?</p>
+            <h2 className="solar-title">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
+            <p classn="solar-description">
                 At [Your Company Name], we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
             </p>
             <ul class="solar-checklist">
                 <li>
-                    <span class="checklist-icon">&#10004;</span> Expert Design & Consultation
+                    <span className="checklist-icon">&#10004;</span> Expert Design & Consultation
                 </li>
                 <li>
-                    <span class="checklist-icon">&#10004;</span> High-Quality Equipment
+                    <span className="checklist-icon">&#10004;</span> High-Quality Equipment
                 </li>
                 <li>
-                    <span class="checklist-icon">&#10004;</span> Certified & Experienced Installers
+                    <span className="checklist-icon">&#10004;</span> Certified & Experienced Installers
                 </li>
                 <li>
-                    <span class="checklist-icon">&#10004;</span> Seamless Installation Process
+                    <span className="checklist-icon">&#10004;</span> Seamless Installation Process
                 </li>
                 <li>
-                    <span class="checklist-icon">&#10004;</span> Reliable Ongoing Support
+                    <span className="checklist-icon">&#10004;</span> Reliable Ongoing Support
                 </li>
                 <li>
-                    <span class="checklist-icon">&#10004;</span> Maximized Energy Savings
+                    <span className="checklist-icon">&#10004;</span> Maximized Energy Savings
                 </li>
             </ul>
         </div>
-          <div class="solar-image-content">
+          <div className="solar-image-content">
             <img src="/images/whychooseus.jpg" alt="Solar panel installation in progress"/>
             </div>
           </div>
             </section>
 
             {/**choose us cards */}
-     <div class="features-section">
-        <div class="cards-layout">
+     <div className="features-section">
+        <div className="cards-layout">
         
-        <div class="feature-box">
-            <i class="fas fa-drafting-compass box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-drafting-compass box-icon"></i>
+            <div className="box-text">
                 <h3>Expert Design & Consultation</h3>
                 <p>Customized solar solutions tailored to your property's unique needs and energy goals.</p>
             </div>
         </div>
 
        
-        <div class="feature-box">
-            <i class="fas fa-solar-panel box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
                 <h3>High-Quality Equipment</h3>
                 <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <i class="fas fa-solar-panel box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
                 <h3>High-Quality Equipment</h3>
                 <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <i class="fas fa-solar-panel box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
                 <h3>High-Quality Equipment</h3>
                 <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <i class="fas fa-solar-panel box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
                 <h3>High-Quality Equipment</h3>
                 <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
         </div>
 
-        <div class="feature-box">
-            <i class="fas fa-solar-panel box-icon"></i>
-            <div class="box-text">
+        <div className="feature-box">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
                 <h3>High-Quality Equipment</h3>
                 <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
