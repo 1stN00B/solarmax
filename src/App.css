@@ -926,7 +926,7 @@ body {
 }
 /*end*/
 
-@media (max-width:700px) {
+@media (max-width:1080px) {
   .solar-ready-container{
     padding-top: 10px;
   }
