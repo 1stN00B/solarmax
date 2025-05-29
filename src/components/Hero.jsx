@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import '../App.css';
 
 export default function Hero() {
@@ -38,11 +37,6 @@ export default function Hero() {
 
   return (
     <div className="hero-container">
-      <Helmet>
-        <link rel="preload" href="/images/solar-panels.jpg" as="image" />
-        <link rel="preload" href="/images/solar-panels2.jpg" as="image" />
-        <link rel="preload" href="/images/solar-panels1.jpg" as="image" />
-      </Helmet>
       <div className="hero-slideshow">
         {/* Slide 1 */}
         <div className="hero-slide">
@@ -50,7 +44,6 @@ export default function Hero() {
             src="/images/solar-panels.jpg" 
             alt="Solar solutions" 
             className="hero-image"
-            loading="lazy"
           />
           <div className="hero-content">
             <h1 className="text-size">Harness the  <span className="colorful">Power</span> of the <span className="colorful">Sun</span></h1>
@@ -96,5 +89,5 @@ export default function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }

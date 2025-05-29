@@ -228,10 +228,6 @@ body {
   transform: scale(1.1);
 }
 
-.hero-slide.active .hero-image {
-  transform: scale(1.05);
-}
-
 /* Text animations */
 @keyframes textSlideIn {
   from {
