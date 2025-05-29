@@ -1500,7 +1500,7 @@ body {
   
   .footer-grid {
     grid-template-columns: repeat(2,1fr);
-    gap: 2.5rem;
+    gap: 2.3rem;
   }
   
   .footer-bottom {
@@ -1508,10 +1508,3 @@ body {
     gap: 1.5rem;
   }
 }
-
-
-
-
-/*------------------fadeup animation---------------------*/
-
-/*------------------end----------------------*/

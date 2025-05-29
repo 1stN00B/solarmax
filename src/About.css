@@ -255,7 +255,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .mission-vision-container {
-      padding: 60px 20px;
+      padding: 50px 15px;
     }
     
     .mv-header h2 {
