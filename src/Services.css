@@ -583,14 +583,16 @@ grid-row-gap: 0px;
   .packages__grid {
     grid-template-columns: 1fr;
   }
-
+  
   .package--featured {
     transform: none;
   }
 
   .benefits__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
   }
+
+
 
   .benefits__text{
     place-items: center;
