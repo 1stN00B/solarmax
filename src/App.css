@@ -376,45 +376,25 @@ body {
 }*/
 
 /*respinsive image*/
-/* Image Container & Image */
-//* Container for the image and the pointer */
 .solar-image-container {
   position: relative;
   flex: 1;
   overflow: hidden;
   background: transparent;
-
-  /*
-   * CRITICAL CHANGE: Remove fixed height/min-width for proportional scaling.
-   * Instead, use padding-bottom based on the *map image's aspect ratio*.
-   * This makes the container size *exactly* match the image's scaled dimensions.
-   *
-   * CALCULATE THIS: (image_height / image_width) * 100%
-   * Example: If your map image is 600px wide and 480px tall: (480 / 600) * 100 = 80%
-   * Example: If your map image is 600px wide and 600px tall: (600 / 600) * 100 = 100%
-   */
-  height: 0; /* Set height to 0 to make padding-bottom control height */
-  padding-bottom: 90%; /* <--- REPLACE XX% with your image's aspect ratio (height / width * 100)% */
-  /* min-width: 550px; /* Keep this if you want a minimum width on desktop, but it might override flex behavior */
-  max-width: 550px; /* Setting a max-width to control desktop size */
+  height: 550px;
+  min-width: 550px;
 }
 
 .solar-main-image {
-  position: absolute; /* Position the image absolutely within the container */
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Image will scale to fit, letterboxing if necessary */
+  object-fit: contain;
   display: block;
 }
 
 /* Content Layout */
 .solar-content-wrapper {
   display: flex;
-  /* Add some margin or padding here for overall spacing if needed */
-  padding: 2rem; /* Example padding for the wrapper itself */
-  align-items: center; /* Vertically align content and map */
 }
 
 .solar-content {
@@ -429,19 +409,12 @@ body {
   height: 16px;
   background: #ff0000;
   border-radius: 50%;
+  left: 65%; /* Adjust horizontal position */
+  top: 35%;  /* Adjust vertical position */
   animation: pulse 2s infinite;
   pointer-events: none;
   z-index: 2;
   transform: translate(-50%, -50%); /* Centers the dot on the coordinates */
-
-  /*
-   * Crucial: Adjust these percentages precisely for Lahore on your map image.
-   * These will be relative to the *image's actual visible area* due to the
-   * .solar-image-container's aspect ratio trick.
-   * Start with these values and fine-tune using browser dev tools.
-   */
-  left: 63%; /* Fine-tuned for Lahore (adjust based on your map) */
-  top: 36%;  /* Fine-tuned for Lahore (adjust based on your map) */
 }
 
 @keyframes pulse {
@@ -462,43 +435,27 @@ body {
   .solar-content-wrapper {
     flex-direction: column;
   }
-
+  
   .solar-image-container {
     min-width: 100%;
-    /* No explicit height/min-height here, padding-bottom handles it */
-    height: 0; /* Ensures padding-bottom determines height */
+    height: auto;
+    min-height: 300px;
     margin-bottom: 2rem;
-    /* You might need to adjust padding-bottom if the map image itself changes aspect ratio on mobile */
-    /* If the map image is always the same and scales proportionally, keep the same padding-bottom value */
-    padding-bottom: 90%; /* <--- KEEP THIS THE SAME AS DESKTOP or adjust if mobile image is different */
-    max-width: 100%; /* Ensure it doesn't exceed screen width */
   }
-
+  
   .solar-main-image {
-    /* No changes needed here, as it's absolute within the container */
+    height: auto;
   }
-
+  
   .solar-content {
     padding-left: 0;
-    padding-top: 2rem; /* Add some space between map and content on mobile */
   }
-
-  /*
-   * Mobile-specific Pointer Styles
-   * With the `padding-bottom` trick, these percentages should ideally be the SAME
-   * as desktop, because the `solar-image-container` is now always proportional
-   * to the image's actual display area.
-   * If they are still off, it means your map image itself is somehow changing
-   * its internal proportions or scaling in a non-uniform way.
-   *
-   * Based on your screenshots, the map on mobile seems to be positioned slightly
-   * differently within its container, or the image itself has different effective
-   * borders. I'm providing values that *might* correct it, but confirm with dev tools.
-   */
+  
+  /* Mobile-specific Pointer Styles */
   .location-pointer {
-    left: 63%; /* Start with the desktop value, or fine-tune */
-    top: 36%;  /* Start with the desktop value, or fine-tune */
-    animation: mobile-pulse 2s infinite; /* Apply mobile pulse animation */
+    left: 60%; /* Different horizontal position for mobile */
+    top: 30%;  /* Different vertical position for mobile */
+    animation: mobile-pulse 2s infinite;
   }
 
   @keyframes mobile-pulse {
@@ -512,6 +469,17 @@ body {
       opacity: 0;
       box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
     }
+  }
+
+  .solar-cta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:15px;
+  }
+  .solar-btn{
+    width: 100%;
+    margin-left: 0;
   }
 }
 
@@ -871,15 +839,17 @@ body {
 
 /* Solar Ready Title */
 .solar-ready-title {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.2;
   text-align: center;
   color: floralwhite;
+  padding-top: 5px;
 }
 
 /* Solar Ready Description */
 .solar-ready-desc {
-  line-height: 1.6;
+  line-height: 1.6rem;
+  font-size: 1.2rem;
   text-align: center;
   color: floralwhite;
 }
@@ -956,13 +926,14 @@ body {
 }
 /*end*/
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .solar-ready-container{
     padding-top: 10px;
   }
 
   .solar-ready-title {
-    font-size: 2.3rem;
+    font-size: 1.9rem;
+    padding-top: 10px;
   }
   
   .solar-ready-desc {
@@ -1165,6 +1136,7 @@ body {
     
     .feature-box {
       padding: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
     }
   
     .box-icon {
@@ -1182,7 +1154,7 @@ body {
   
   @media (max-width: 768px) {
     .services-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: 2fr;
     }
   }
   
@@ -1527,7 +1499,7 @@ body {
   }
   
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
     gap: 2.5rem;
   }
   
