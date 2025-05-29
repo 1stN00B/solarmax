@@ -332,10 +332,10 @@ export default function Main() {
               <div className="footer-column">
                 <h4 className="footer-heading">Quick Links</h4>
                 <ul className="footer-links custom-bullets">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/service">Services</a></li>
-                  <li><a href="/contact">Contact</a></li>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/service">Services</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
                 </ul>
               </div>
 
