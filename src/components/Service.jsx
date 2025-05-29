@@ -747,7 +747,7 @@ const Services = () => {
         <div className="footer-gradient-container">
           <div className="footer-main-content">
             <div className="footer-branding">
-              <span className="footer-logo">Z/F</span>
+              <span className="footer-logo">Solar Wings</span>
               <p className="footer-mission">Harnessing the sun's power for a sustainable future</p>
 
               {/* Social Media Icons */}

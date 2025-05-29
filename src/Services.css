@@ -577,6 +577,7 @@ grid-row-gap: 0px;
 /* Responsive Design */
 @media (max-width: 768px) {
   .services__main-title {
+    padding-top: 10px;
     font-size: 2.2rem;
   }
 
@@ -587,12 +588,15 @@ grid-row-gap: 0px;
   .package--featured {
     transform: none;
   }
+  
+  .benefit__card{
+    max-width: 180px;
+    max-height: 230px;
+  }
 
   .benefits__grid {
     grid-template-columns: repeat(2,1fr);
   }
-
-
 
   .benefits__text{
     place-items: center;
