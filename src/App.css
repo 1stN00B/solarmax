@@ -1488,7 +1488,7 @@ body {
   
   .footer-grid {
     grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .footer-bottom {
