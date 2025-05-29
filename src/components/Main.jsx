@@ -122,7 +122,6 @@ export default function Main() {
 
             <div className="solar-cta">
               <button className="solar-btn primary">Get Free Estimate →</button>
-              <button className="solar-btn secondary">View Case Studies →</button>
             </div>
           </div>
         </div>
