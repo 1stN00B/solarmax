@@ -926,35 +926,18 @@ body {
 }
 /*end*/
 
-@media (max-width:1080px) {
-  .solar-ready-container{
-    padding-top: 10px;
-  }
-
-  .solar-ready-title {
-    font-size: 0.2rem;
-    padding-top: 5px;
-  }
-  
-  .solar-ready-desc {
-    font-size: 0.6rem;
-  }
-  
-}
-
-
 @media (max-width: 768px) {
   .solar-ready-container{
     padding-top: 10px;
   }
 
   .solar-ready-title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     padding-top: 10px;
   }
   
   .solar-ready-desc {
-    font-size: 1.22rem;
+    font-size: 0.98rem;
   }
 }
 
