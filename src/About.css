@@ -1,3 +1,20 @@
+.services-hero1 {
+    position: relative;
+    min-height: 70vh;  /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4b76dc;
+    padding: 4rem 2rem;
+    overflow: hidden;
+  }
+  .highlight1 {
+    color: #154ede;
+    position: relative;
+    display: inline-block;
+  }
+
+ 
 .container-aboutus {
     max-width: 100%;
     padding: 2rem 0;
@@ -96,6 +113,163 @@
     }
   }
 /*-------------------------ends here-----------------------------*/
+
+/*-----------------------------new-------------------------------------*/
+/* Our Story Section */
+.our-story {
+  padding: 5rem 5rem;
+  background: #fff;
+}
+
+.our-story h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+}
+
+.divider-line {
+  width: 60px;
+  height: 4px;
+  background: #45aec6;
+  margin-bottom: 2rem;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.why-choose {
+  background: #c8ddf0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #499cb5;
+  margin-top: 2rem;
+}
+
+.why-choose h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #137c9f;
+}
+
+.why-choose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.why-choose li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.8rem;
+  position: relative;
+  color: #4b5563;
+}
+
+.check-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #108fb9;
+  font-weight: bold;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  height: 500px;
+}
+
+.grid-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.item-1 {
+  background-image: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  grid-row: span 2;
+}
+
+.item-2 {
+  background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+}
+
+.item-3 {
+  background-image: url('https://cdn.pixabay.com/photo/2024/09/30/10/13/ai-generated-9085460_1280.jpg');
+  grid-row: span 2;
+}
+
+.item-4 {
+  background-image: url('https://images.pexels.com/photos/8853525/pexels-photo-8853525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .image-grid {
+    height: 400px;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero {
+    height: 90vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.8rem;
+  }
+  
+  .stat-card {
+    padding: 15px 10px;
+  }
+  
+  .our-story {
+    padding: 3rem 0;
+  }
+  
+  .our-story h2 {
+    font-size: 2rem;
+  }
+  
+  .image-grid {
+    height: 300px;
+  }
+}
 
   /*---------------------------------------mission vision-------------------------------------*/
 

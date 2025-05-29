@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../About.css';
 import { Link } from 'react-router-dom';
-import { type } from '@testing-library/user-event/dist/type';
 
 export default function About() {
   const location = useLocation();
@@ -15,7 +14,6 @@ export default function About() {
         const carousel = new window.bootstrap.Carousel(carouselElement, {
           interval: 5000,
           pause: 'hover',
-          //pause:'false' for moving continuous slide
           wrap: true,
           keyboard: true
         });
@@ -28,7 +26,7 @@ export default function About() {
     let carouselInstance = null;
     const timer = setTimeout(() => {
       carouselInstance = initializeCarousel();
-    }, 100); // Small delay to ensure Bootstrap is loaded
+    }, 100);
 
     return () => {
       clearTimeout(timer);
@@ -41,6 +39,7 @@ export default function About() {
   return (
     <div className="about-page">
       {/* Carousel Section */}
+      {/** 
       <div className='container-aboutus'>
         <div id="aboutUsCarousel" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -50,7 +49,7 @@ export default function About() {
           </div>
 
           <div className="carousel-inner">
-            {/* Slide 1 */}
+          
             <div className="carousel-item active">
               <div className="row g-0 align-items-center">
                 <div className="col-md-6 p-5">
@@ -72,7 +71,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Slide 2 */}
+          
             <div className="carousel-item">
               <div className="row g-0 align-items-center">
                 <div className="col-md-6 p-5">
@@ -94,7 +93,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Slide 3 */}
+            
             <div className="carousel-item">
               <div className="row g-0 align-items-center">
                 <div className="col-md-6 p-5">
@@ -126,7 +125,74 @@ export default function About() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
+      </div>*/}
+
+      {/**---------------------new-------------------------------- */}
+      <div className="services-hero1">
+      <div className="kinetic-text">ABOUT US</div>
+      
+      <div className="content-wrapper">
+        <div className="header-content">
+          <h1 className="title">
+            We Power <span className="highlight1">Sustainable Futures</span><br/>
+            Tailored for Your Success
+          </h1>
+          <p className="subtext">
+           Customized solar solutions designed to power your future—efficient, reliable, and built to match your unique energy needs.
+          </p>
+        </div>
       </div>
+    </div>
+
+      {/* Our Story Section */}
+      <section className="our-story">
+        <div className="container-ourstory">
+          <div className="row">
+            <div className="col-md-6">
+              <h2>Our <span className="highlight-ourstory">Solar Journey</span></h2>
+              <div className="divider-line"></div>
+              
+              <p className="story-text">
+                We started with a simple vision: make solar energy accessible to everyone in Pakistan. 
+                As a new team in the industry, we're driven by innovation rather than legacy.
+              </p>
+              
+              <p className="story-text">
+                Our approach combines cutting-edge solar technology with personalized service. 
+                We understand that transitioning to solar is a significant decision, 
+                which is why we prioritize education and transparency over sales pressure.
+              </p>
+              
+              <div className="why-choose">
+                <h3>Why Choose Us</h3>
+                <ul>
+                  <li>
+                    <span className="check-icon">✓</span>
+                    Local experts with national technology partnerships
+                  </li>
+                  <li>
+                    <span className="check-icon">✓</span>
+                    Custom solutions for every roof type and energy need
+                  </li>
+                  <li>
+                    <span className="check-icon">✓</span>
+                    Ongoing support long after installation
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="col-md-6">
+              <div className="image-grid">
+                <div className="grid-item item-1"></div>
+                <div className="grid-item item-2"></div>
+                <div className="grid-item item-3"></div>
+                <div className="grid-item item-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Mission Vision Section */}
       <div className="mission-vision-container">
@@ -144,21 +210,7 @@ export default function About() {
               </svg>
             </div>
             <h3>Our Mission</h3>
-            <p>To empower Pakistani homes and businesses with affordable, sustainable solar energy solutions that reduce costs and environmental impact.</p>
-            <div className="mv-points">
-              <div className="point">
-                <span className="point-number">01</span>
-                <span>Democratize solar energy access</span>
-              </div>
-              <div className="point">
-                <span className="point-number">02</span>
-                <span>Deliver unmatched quality</span>
-              </div>
-              <div className="point">
-                <span className="point-number">03</span>
-                <span>Educate and empower</span>
-              </div>
-            </div>
+            <p>"Empowering communities with sustainable, cost-effective solar solutions. We are dedicated to delivering high-quality solar panel services that reduce carbon footprints, enhance energy independence, and provide reliable renewable energy for homes and businesses."</p>
           </div>
 
           <div className="mv-card vision-card">
@@ -168,21 +220,7 @@ export default function About() {
               </svg>
             </div>
             <h3>Our Vision</h3>
-            <p>To lead Pakistan's renewable energy transformation, creating a future where every building generates its own clean power.</p>
-            <div className="mv-points">
-              <div className="point">
-                <span className="point-number">01</span>
-                <span>Energy-independent Pakistan</span>
-              </div>
-              <div className="point">
-                <span className="point-number">02</span>
-                <span>Carbon-neutral communities</span>
-              </div>
-              <div className="point">
-                <span className="point-number">03</span>
-                <span>Innovation hub for solar tech</span>
-              </div>
-            </div>
+            <p>"To lead the transition to a cleaner, greener future by making solar energy accessible and efficient for all. We envision a world where every home and business harnesses the power of the sun to create a sustainable tomorrow."</p>
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function Hero() {
             className="hero-image"
           />
           <div className="hero-content">
-            <h1 className="text-size">Harness the  <span className="colorful">Power</span> of the <span className="colorful">Sun</span></h1>
+            <h1 className="text-size"><span className="colorful">Harness</span> the  <span className="colorful">Power</span> of the <span className="colorful">Sun</span></h1>
             <p className="hero-subtitle">
               Sustainable energy solutions for a brighter tomorrow.<br />
               Reduce your carbon footprint and save on energy bills.
