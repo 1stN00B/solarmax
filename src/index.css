@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*--------------------------------loader----------------------------*/
+body.solar-loader-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.prevent-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Animation delays for letters */
+.solar-letter:nth-child(1) { --delay: 0; }
+.solar-letter:nth-child(2) { --delay: 1; }
+.solar-letter:nth-child(3) { --delay: 2; }
+.solar-letter:nth-child(4) { --delay: 3; }
+.solar-letter:nth-child(5) { --delay: 4; }
+.solar-letter:nth-child(7) { --delay: 5; }
+.solar-letter:nth-child(8) { --delay: 6; }
+.solar-letter:nth-child(9) { --delay: 7; }
+.solar-letter:nth-child(10) { --delay: 8; }
+.solar-letter:nth-child(11) { --delay: 9; }
+
+/* Animation delays for grid lines */
+.solar-grid-line:nth-child(1) { --delay: 0; }
+.solar-grid-line:nth-child(2) { --delay: 0.5; }
+.solar-grid-line:nth-child(3) { --delay: 1; }
+.solar-grid-line:nth-child(4) { --delay: 1.5; }
+.solar-grid-line:nth-child(5) { --delay: 2; }
+.solar-grid-line:nth-child(6) { --delay: 2.5; }
+.solar-grid-line:nth-child(7) { --delay: 3; }
+.solar-grid-line:nth-child(8) { --delay: 3.5; }
+.solar-grid-line:nth-child(9) { --delay: 0.2; }
+.solar-grid-line:nth-child(10) { --delay: 0.7; }
+.solar-grid-line:nth-child(11) { --delay: 1.2; }
+.solar-grid-line:nth-child(12) { --delay: 1.7; }
+.solar-grid-line:nth-child(13) { --delay: 2.2; }
+.solar-grid-line:nth-child(14) { --delay: 2.7; }
+.solar-grid-line:nth-child(15) { --delay: 3.2; }
+.solar-grid-line:nth-child(16) { --delay: 3.7; }
+
+/* Animation delays for particles */
+.solar-particle {
+  --x: calc(100vw * var(--random-x, 0.5));
+  --y: calc(100vh * var(--random-y, 0.5));
+  top: var(--y);
+  left: var(--x);
+  animation-delay: calc(var(--delay) * 1s);
+}
+
+/* Generate random positions and delays for particles */
+.solar-particle:nth-child(1) { --random-x: 0.1; --random-y: 0.9; --delay: 0; }
+.solar-particle:nth-child(2) { --random-x: 0.2; --random-y: 0.8; --delay: 0.5; }
+.solar-particle:nth-child(3) { --random-x: 0.3; --random-y: 0.7; --delay: 1; }
+/* Add more for each particle... */
