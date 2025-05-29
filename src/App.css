@@ -926,6 +926,23 @@ body {
 }
 /*end*/
 
+@media (max-width:700px) {
+  .solar-ready-container{
+    padding-top: 10px;
+  }
+
+  .solar-ready-title {
+    font-size: 1.3rem;
+    padding-top: 10px;
+  }
+  
+  .solar-ready-desc {
+    font-size: 0.6rem;
+  }
+  
+}
+
+
 @media (max-width: 768px) {
   .solar-ready-container{
     padding-top: 10px;
