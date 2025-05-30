@@ -13,6 +13,39 @@
     position: relative;
     display: inline-block;
   }
+  .kinetic-text1 {
+    position: absolute;
+    font-size: clamp(6rem, 25vw, 30rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.275);
+    white-space: nowrap;
+    animation: float 20s infinite linear alternate;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    .services-hero1 {
+      min-height: 60vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .title {
+      white-space: normal; /* Allow wrapping on mobile */
+      line-height: 1.2;
+      font-size: 2.2rem;
+    }
+
+    .kinetic-text1 {
+      font-size: clamp(4rem, 30vw, 18rem);
+      opacity: 0.5;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+  }
 
  
 .container-aboutus {

@@ -129,7 +129,7 @@ export default function About() {
 
       {/**---------------------new-------------------------------- */}
       <div className="services-hero1">
-      <div className="kinetic-text">ABOUT US</div>
+      <div className="kinetic-text1">ABOUT US</div>
       
       <div className="content-wrapper">
         <div className="header-content">
