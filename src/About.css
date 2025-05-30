@@ -397,46 +397,6 @@
     margin-bottom: 35px;
   }
   
-  .mv-points {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .point {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .point-number {
-    font-size: 1rem;
-    font-weight: 700;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  
-  .mission-card .point-number {
-    background-color: rgba(49, 130, 206, 0.1);
-    color: #3182ce;
-  }
-  
-  .vision-card .point-number {
-    background-color: rgba(56, 178, 172, 0.1);
-    color: #38b2ac;
-  }
-  
-  .point span:last-child {
-    font-size: 1rem;
-    color: #2d3748;
-    font-weight: 500;
-  }
-  
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .mission-vision-container {
@@ -448,7 +408,7 @@
     }
     
     .mv-card {
-      padding: 40px 30px;
+      padding: 15px 20px;
     }
   }
   
@@ -652,6 +612,7 @@
   @media (max-width: 768px) {
     .commitment-grid {
       grid-template-columns: 1fr;
+      gap: 10px;
     }
     
     .commitment-header h1 {
@@ -660,6 +621,9 @@
     
     .commitment-header h2 {
       font-size: 1.25rem;
+    }
+    .commitment-card li{
+      line-height: 2cap;
     }
   }/*=-------------------------end----------------------*?
 
