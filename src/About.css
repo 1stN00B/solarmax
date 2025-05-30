@@ -229,6 +229,8 @@
   }
 
   .why-choose {
+    align-items: center;
+    line-height: 1cap;
     padding: 5px; /* Adjust padding as needed */
   }
 
