@@ -224,8 +224,12 @@
 
 @media (max-width: 768px) {
   .container-ourstory{
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .why-choose {
+    padding: 5px; /* Adjust padding as needed */
   }
 
   .hero-content h1 {
