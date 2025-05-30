@@ -223,8 +223,9 @@
 }
 
 @media (max-width: 768px) {
-  .our-story{
-    margin: 0 5px;
+  .container-ourstory{
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .hero-content h1 {
