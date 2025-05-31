@@ -23,12 +23,13 @@ const ContactUs = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        //alert("your Message is forwaded")
         const whatsappMessage = ` New Solar Inquiry \n\n
  Name: ${formData.name}\n
 Email: ${formData.email}\n
  Phone: ${formData.phone}\n
  Service Needed: ${formData.service}\n
-Message: ${formData.message}\n\n
+Message: ${formData.message}\n\
 _This inquiry was sent via your website_`;
 
         const whatsappUrl = `https://wa.me/+923168280051?text=${encodeURIComponent(whatsappMessage)}`;

@@ -174,7 +174,7 @@
 
 /* Form Section */
 .contact-form-section {
-  background: #f8f9fa;
+  background: #e5e9ec;
   padding: 4rem 0;
   margin: 2rem 0;
 }
@@ -258,7 +258,7 @@
 
 .submit-btn:hover {
   color:  #a2c7da;
-  background-color: #2243e6;
+  background-color: #4897d3;
 }
 
 /* Info Section */
@@ -336,43 +336,6 @@
   height: 8px;
   background: #e67e22;
   border-radius: 50%;
-}
-
-/* Testimonial Section */
-.testimonial-section {
-  background: #3498db;
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.testimonial-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.testimonial-section h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.testimonial-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.testimonial-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-}
-
-.testimonial-author {
-  font-weight: 600;
 }
 
 /* Responsive Design */

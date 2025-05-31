@@ -139,10 +139,18 @@ const AutoHideNavbar = () => {
                 } 
                 to="/service" 
                 id="navbarDropdown"
-                onClick={handleDropdownToggle}
+                onClick={(event) => {
+                  // On mobile, toggle dropdown instead of navigating
+                  if (window.innerWidth <= 767) {
+                    event.preventDefault();
+                    handleDropdownToggle(event);
+                  }
+                  // On desktop, just navigate (hover handles dropdown)
+                }}
               >
                 Services
               </NavLink>
+
               <ul 
                 className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} 
                 aria-labelledby="navbarDropdown"
@@ -167,6 +175,7 @@ const AutoHideNavbar = () => {
                     </div>
                   </Link>
                 </li>
+
                 <li>
                   <Link 
                     className="dropdown-item" 
@@ -184,9 +193,10 @@ const AutoHideNavbar = () => {
                     </div>
                   </Link>
                 </li>
+
                 <li><hr className="dropdown-divider"/></li>
               </ul>
-            </li>
+            </li> 
             
             <li className="nav-item pe-3">
               <NavLink 

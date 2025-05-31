@@ -435,8 +435,6 @@ body {
   }
 }
 
-/*another hero code for sleak animation*/
-
 /*---------------------------main page------------------------*/
 
 /* Solar Hero Section *//* Hero.css */
@@ -549,19 +547,19 @@ body {
   
   /* Mobile-specific Pointer Styles */
   .location-pointer {
-    left: 60%; /* Different horizontal position for mobile */
-    top: 30%;  /* Different vertical position for mobile */
+    left: 50%; /* Different horizontal position for mobile */
+    top: 20%;  /* Different vertical position for mobile */
     animation: mobile-pulse 2s infinite;
   }
 
   @keyframes mobile-pulse {
     0% {
-      transform: translate(-50%, -50%) scale(0.6);
+      transform: translate(-30%, -30%) scale(0.6);
       opacity: 0.8;
       box-shadow: 0 0 0 0 rgb(255, 0, 0);
     }
     100% {
-      transform: translate(-50%, -50%) scale(1.4);
+      transform: translate(-30%, -30%) scale(1.4);
       opacity: 0;
       box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
     }
