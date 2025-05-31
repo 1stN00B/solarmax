@@ -547,8 +547,8 @@ body {
   
   /* Mobile-specific Pointer Styles */
   .location-pointer {
-    left: 70% !important;  /* Shift to the right */
-    top: 20% !important;   /* Move down */
+    left: 74% !important;  /* Shift to the right */
+    top: 28% !important;   /* Move down */
     animation: mobile-pulse 2s infinite;
   }
 
