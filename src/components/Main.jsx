@@ -5,9 +5,9 @@ import '../App.css';
 // FIXED ServiceCard component
 const ServiceCard = React.memo(({ title, description, items = [], link, imgSrc, imgAlt }) => (
   <div className="service-card">
-    <img 
-      className='imageservices-mainpage' 
-      src={imgSrc} 
+    <img
+      className='imageservices-mainpage'
+      src={imgSrc}
       alt={imgAlt}
       loading="lazy"
     />
@@ -86,14 +86,14 @@ export default function Main() {
       <div className="image-container">
         <div className="solar-content-wrapper">
           <div className="solar-image-container">
-            <img 
-              src="/images/Pakistan-map.svg" 
-              alt="Pakistan map" 
+            <img
+              src="/images/Pakistan-map.svg"
+              alt="Pakistan map"
               className="solar-main-image responsive-map"
               loading="lazy"
             />
-            <div 
-              className="location-pointer" 
+            <div
+              className="location-pointer"
               style={{
                 top: "45%",
                 left: "73.5%"
@@ -144,110 +144,109 @@ export default function Main() {
         </Link>
       </div>
       {/*services ends here*/}
-<br/>
-          {/*---------------get in touch--------------*/}
+      <br />
+      {/*---------------get in touch--------------*/}
       <div className="solar-ready-container bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 px-6 rounded-xl shadow-xl max-w-4xl mx-auto my-8 text-center">
         <h2 className="solar-ready-title text-3xl md:text-4xl font-bold mb-4">Ready to Switch to Solar?</h2>
         <p className="solar-ready-desc text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
-          Unlock significant savings and energy independence with the power of <br/>solar—join your neighbors who are already enjoying lower bills and a cleaner, sustainable future!
+          Unlock significant savings and energy independence with the power of <br />solar—join your neighbors who are already enjoying lower bills and a cleaner, sustainable future!
         </p>
         <Link className="buttongetintouch" to='/contact'>Take the First Step</Link>
       </div>
 
-     {/*----------------why choose us-------------------*/}
+      {/*----------------why choose us-------------------*/}
       <section class="solar-services-section">
-    <div class="container-choose-us">
-        <div className="solar-text-content">
+        <div class="container-choose-us">
+          <div className="solar-text-content">
             <p className="solar-subtitle1">Why Choose Our Solar Services?</p>
             <h2 className="solar-title">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
             <p classn="solar-description">
-                At [Your Company Name], we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
+              At [Your Company Name], we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
             </p>
             <ul class="solar-checklist">
-                <li>
-                    <span className="checklist-icon">&#10004;</span> Expert Design & Consultation
-                </li>
-                <li>
-                    <span className="checklist-icon">&#10004;</span> High-Quality Equipment
-                </li>
-                <li>
-                    <span className="checklist-icon">&#10004;</span> Certified & Experienced Installers
-                </li>
-                <li>
-                    <span className="checklist-icon">&#10004;</span> Seamless Installation Process
-                </li>
-                <li>
-                    <span className="checklist-icon">&#10004;</span> Reliable Ongoing Support
-                </li>
-                <li>
-                    <span className="checklist-icon">&#10004;</span> Maximized Energy Savings
-                </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> Expert Design & Consultation
+              </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> High-Quality Equipment
+              </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> Certified & Experienced Installers
+              </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> Seamless Installation Process
+              </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> Reliable Ongoing Support
+              </li>
+              <li>
+                <span className="checklist-icon">&#10004;</span> Maximized Energy Savings
+              </li>
             </ul>
-        </div>
-          <div className="solar-image-content">
-            <img src="/images/whychooseus.jpg" alt="Solar panel installation in progress"/>
-            </div>
           </div>
-            </section>
+          <div className="solar-image-content">
+            <img src="/images/whychooseus.jpg" alt="Solar panel installation in progress" />
+          </div>
+        </div>
+      </section>
 
-            {/**choose us cards */}
-     <div className="features-section">
+      {/**choose us cards */}
+      <div className="features-section">
         <div className="cards-layout">
-        
-        <div className="feature-box">
+
+          <div className="feature-box">
             <i className="fas fa-drafting-compass box-icon"></i>
             <div className="box-text">
-                <h3>Expert Design & Consultation</h3>
-                <p>Customized solar solutions tailored to your property's unique needs and energy goals.</p>
+              <h3>Expert Design & Consultation</h3>
+              <p>Customized solar solutions tailored to your property's unique needs and energy goals.</p>
             </div>
-        </div>
+          </div>
 
-       
-        <div className="feature-box">
+
+          <div className="feature-box">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-                <h3>High-Quality Equipment</h3>
-                <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>High-Quality Equipment</h3>
+              <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
-        </div>
+          </div>
 
-        <div className="feature-box">
+          <div className="feature-box">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-                <h3>High-Quality Equipment</h3>
-                <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>High-Quality Equipment</h3>
+              <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
-        </div>
+          </div>
 
-        <div className="feature-box">
+          <div className="feature-box">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-                <h3>High-Quality Equipment</h3>
-                <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>High-Quality Equipment</h3>
+              <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
-        </div>
+          </div>
 
-        <div className="feature-box">
+          <div className="feature-box">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-                <h3>High-Quality Equipment</h3>
-                <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>High-Quality Equipment</h3>
+              <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
-        </div>
+          </div>
 
-        <div className="feature-box">
+          <div className="feature-box">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-                <h3>High-Quality Equipment</h3>
-                <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>High-Quality Equipment</h3>
+              <p>Premium solar panels and components with industry-leading performance warranties.</p>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
 
-       {/**---------------frequent asked questions------------------ */}
-      {/* Modified FAQ section */}
+      {/**---------------frequent asked questions------------------ */}
       <div className="faq-section">
         <div className="faq-header">
           <h2 className="faq-title">Frequently Asked Questions</h2>
@@ -264,7 +263,7 @@ export default function Main() {
               </svg>
             </button>
             <div className="faq-answer">
-              <p>Most homeowners save between 50-90% on their electricity bills...</p>
+              <p>Most homeowners save 50-90% on electricity bills. Exact savings depend on your energy usage and local sunlight conditions.</p>
             </div>
           </div>
 
@@ -277,7 +276,7 @@ export default function Main() {
               </svg>
             </button>
             <div className="faq-answer">
-              {/* ... answer content ... */}
+              <p>Solar panels need minimal maintenance - just occasional cleaning and annual inspections. They're designed to withstand weather with no moving parts.</p>
             </div>
           </div>
 
@@ -290,13 +289,48 @@ export default function Main() {
               </svg>
             </button>
             <div className="faq-answer">
-              {/* ... answer content ... */}
+              <p>Residential installations typically take 1-3 days. Commercial systems may require 1-2 weeks depending on size.</p>
             </div>
           </div>
+
+          {/* Question 4 - Changed index to 3 */}
+          <div className={`faq-item ${activeIndex === 3 ? 'active' : ''}`}>
+            <button className="faq-question" onClick={() => toggleFAQ(3)}>
+              How long do solar panels last?
+              <svg className="faq-icon" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="faq-answer">
+              <p>High-quality solar panels typically last 25-30 years or more. Over time, efficiency decreases slightly, but proper maintenance ensures long-term performance.</p>
+            </div>
+          </div>
+
+          {/* Question 5 - About solar panel efficiency */}
+          <div className={`faq-item ${activeIndex === 4 ? 'active' : ''}`}>
+            <button className="faq-question" onClick={() => toggleFAQ(4)}>
+              What affects solar panel efficiency?
+              <svg className="faq-icon" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className="faq-answer">
+              <p>Several factors impact solar panel efficiency:</p>
+              <ul>
+                <li><strong>Sunlight intensity:</strong> More direct sunlight means better efficiency</li>
+                <li><strong>Temperature:</strong> Panels work best at moderate temperatures (around 25°C)</li>
+                <li><strong>Angle and orientation:</strong> Proper positioning maximizes sun exposure</li>
+                <li><strong>Shading:</strong> Even partial shading can significantly reduce output</li>
+                <li><strong>Panel quality:</strong> Higher-grade panels typically have better efficiency ratings</li>
+                <li><strong>Dust and dirt:</strong> Clean panels perform better than dirty ones</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
 
-{/*----------------footer-------------------*/}
+      {/*----------------footer-------------------*/}
 
       <footer className="solar-footer-gradient">
         <div className="footer-gradient-container">

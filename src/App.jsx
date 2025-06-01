@@ -56,7 +56,7 @@ function App() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.classList.remove('solar-loader-active');
-    }, 4000); // Show loader for 4 seconds
+    }, 3000); // Show loader for 4 seconds
 
     return () => {
       clearTimeout(timer);
