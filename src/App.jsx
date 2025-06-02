@@ -7,14 +7,23 @@ import Service from './components/Service';
 import Contact from './components/Contact';
 import NotFound from './components/Notfound';
 import SolarWingsLoader from './components/SolarWingsLoader';
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom"; // Add useLocation
 
-const Layout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-  </>
-);
+// Updated Layout to include scroll-to-top
+const Layout = () => {
+  const location = useLocation(); // Get current route location
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on route change
+  }, [location.pathname]); // Trigger when path changes
+
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -31,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "service",
-        element: <Service />
+        element: <Service/>
       },
       {
         path:"contact",
@@ -49,14 +58,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Add class to body for loader-specific styling
     document.body.classList.add('solar-loader-active');
-    
-    // Simulate loading (replace with actual loading logic)
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.classList.remove('solar-loader-active');
-    }, 3000); // Show loader for 4 seconds
+    }, 3000);
 
     return () => {
       clearTimeout(timer);
@@ -67,7 +73,6 @@ function App() {
   return (
     <>
       {isLoading && <SolarWingsLoader />}
-      
       <div className={`app-content ${isLoading ? 'prevent-scroll' : ''}`}>
         <RouterProvider router={router} />
       </div>

@@ -171,7 +171,6 @@ const AutoHideNavbar = () => {
                     </div>
                     <div className="dropdown-content">
                       <span className="dropdown-title">Residential Solar</span>
-                      <span className="dropdown-desc">For homes and apartments</span>
                     </div>
                   </Link>
                 </li>
@@ -189,7 +188,6 @@ const AutoHideNavbar = () => {
                     </div>
                     <div className="dropdown-content">
                       <span className="dropdown-title">Commercial Solar</span>
-                      <span className="dropdown-desc">For businesses and factories</span>
                     </div>
                   </Link>
                 </li>

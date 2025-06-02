@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router';
 import '../Contact.css';
 
 const ContactUs = () => {
+
+  useEffect(() => {
+        window.scrollTo(0, 0); 
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -187,7 +192,7 @@ _This inquiry was sent via your website_`;
                 <ul className="footer-links custom-bullets">
                   <li><Link to="/">Home</Link></li>
                   <li><Link to="/about">About</Link></li>
-                  <li><Link to="/services">Services</Link></li>
+                  <li><Link to="/service">Service</Link></li>
                   <li><Link to="/contact">Contact</Link></li>
                 </ul>
               </div>
