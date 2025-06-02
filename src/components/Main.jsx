@@ -127,7 +127,7 @@ export default function Main() {
         </div>
       </div>
 
-      {/* Responsive Service Cards */}
+      {/*-------------------------- Service Cards -----------------------------*/}
       <div className="container">
         <div className='center'>
           <h1 className="h1">Our Services</h1>

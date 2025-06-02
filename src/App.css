@@ -442,24 +442,6 @@ body {
   padding: 0 2rem;
 }
 
-/* Add these adjustments to your existing CSS */
-/*.solar-image-container {
-  flex: 1;
-  /*border-radius: 12px;*/
-  /*overflow: hidden;
-  box-shadow: 0 8px 24px rgb(255, 255, 255);
-  position: relative;
-  height: 550px; /* Add fixed height */
-  /* width:550px;
-}*/
-/*
-.solar-main-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /*  display: block; Ensure image is displayed as block 
-}*/
-
 /*respinsive image*/
 .solar-image-container {
   position: relative;
@@ -499,7 +481,7 @@ body {
   animation: pulse 2s infinite;
   pointer-events: none;
   z-index: 2;
-  transform: translate(-50%, -50%); /* Centers the dot on the coordinates */
+  transform: translate(-50%, -50%); 
 }
 
 @keyframes pulse {
@@ -538,8 +520,8 @@ body {
   
   /* Mobile-specific Pointer Styles */
   .location-pointer {
-    left: 74% !important;  /* Shift to the right */
-    top: 32% !important;   /* Move down */
+    left: 72% !important;  /* Shift to the right */
+    top: 31% !important;   /* Move down */
     animation: mobile-pulse 2s infinite;
   }
 
@@ -556,15 +538,14 @@ body {
     }
   }
 
-  .solar-cta{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap:15px;
+  .solar-cta {
+    display: flex;
+    justify-content: center; /* Horizontally centers the button */
+    width: 100%; /* Ensures full width for proper centering */
   }
-  .solar-btn{
-    width: 100%;
-    margin-left: 0;
+
+  .solar-btn {
+    margin-left: 0; /* Removes any forced left margin */
   }
 }
 
@@ -610,7 +591,7 @@ body {
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.3s ease;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .solar-btn.primary {
@@ -625,18 +606,6 @@ body {
   box-shadow: 0 5px 15px rgb(250, 250, 250);
 }
 
-/* Location Pointer */
-.location-pointer {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #ff0000;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: pulse 2s infinite;
-  pointer-events: none;
-  z-index: 2;
-}
 /*---------------------------------------services cards CSS---------------------------------*/
 /* Container Styles */
 .container {
