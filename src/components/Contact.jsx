@@ -82,10 +82,12 @@ _This inquiry was sent via your website_`;
                     
                     <div className="header-side blue-side animate-on-scroll slide-in-right delay-4"> 
                         <div className="image-overlay">
-                            <img src="/images/contactus1.jpg" alt="Contact US" className="split-image" />
+                            <img src="/images/contactus.jpg" alt="Contact US" className="split-image" />
                             <div className="header-cta animate-on-scroll slide-in delay-5"> 
+                            <span className="colorful">   
                                 <h2>Start Saving Today</h2>
                                 <p>Get your free consultation</p>
+                            </span>
                             </div>
                         </div>
                     </div>

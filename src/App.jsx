@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Main from './components/Main';
@@ -7,15 +7,50 @@ import Service from './components/Service';
 import Contact from './components/Contact';
 import NotFound from './components/Notfound';
 import SolarWingsLoader from './components/SolarWingsLoader';
-import { createBrowserRouter, RouterProvider, Outlet, useLocation } from "react-router-dom"; // Add useLocation
+import { 
+  createBrowserRouter, 
+  RouterProvider, 
+  Outlet, 
+  useLocation,
+  useNavigationType
+} from "react-router-dom";
 
-// Updated Layout to include scroll-to-top
 const Layout = () => {
-  const location = useLocation(); // Get current route location
+  const location = useLocation();
+  const navigationType = useNavigationType();
+  const prevPathname = useRef(location.pathname);
+
+  // Disable browser's automatic scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) { // Fixed: use window.history
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top on route change
-  }, [location.pathname]); // Trigger when path changes
+    // Handle scroll reset for new page navigations
+    if (navigationType === 'PUSH' || prevPathname.current !== location.pathname) {
+      if (!location.hash) {
+        window.scrollTo(0, 0);
+      }
+      prevPathname.current = location.pathname;
+    }
+  }, [location, navigationType]);
+
+  // Handle back/forward navigation
+  useEffect(() => {
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        // Use current window location to avoid stale closure issues
+        if (!window.location.hash) {
+          window.scrollTo(0, 0);
+        }
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
+  }, []);
 
   return (
     <>
@@ -56,12 +91,21 @@ const router = createBrowserRouter([
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const savedScrollPosition = useRef(0);
 
   useEffect(() => {
+    // Save scroll position before showing loader
+    savedScrollPosition.current = window.scrollY;
     document.body.classList.add('solar-loader-active');
+
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.body.classList.remove('solar-loader-active');
+      
+      // Restore scroll position after loader
+      requestAnimationFrame(() => {
+        window.scrollTo(0, savedScrollPosition.current);
+      });
     }, 3000);
 
     return () => {

@@ -267,7 +267,7 @@ export default function Main() {
 
 
       {/**---------------frequent asked questions------------------ */}
-      <div className="faq-section slide-in slide-up delay-3">
+      <div className="faq-section slide-in slide-up delay-2">
         <div className="faq-header">
           <h2 className="faq-title">Frequently Asked Questions</h2>
           <p className="faq-subtitle">Find answers to common questions about solar energy solutions</p>
