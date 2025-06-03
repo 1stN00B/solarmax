@@ -1,3 +1,40 @@
+/*animations*/
+/* Slide-in Animation Styles */
+.slide-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Different slide directions */
+.slide-left {
+  transform: translateX(-30%);
+}
+
+.slide-right {
+  transform: translateX(30%);
+}
+
+.slide-up {
+  transform: translateY(30%);
+}
+
+.slide-down {
+  transform: translateY(-30%);
+}
+
+/* Active state when element is in view */
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Optional: Add delays for staggered animations */
+.slide-in.delay-1 { transition-delay: 0.2s; }
+.slide-in.delay-2 { transition-delay: 0.4s; }
+.slide-in.delay-3 { transition-delay: 0.6s; }
+/*----------------------end-----------------------------*/
+
 .services-hero {
     position: relative;
     min-height: 70vh;  /* Reduced height */
@@ -7,6 +44,14 @@
     background: #1f3976;
     padding: 4rem 2rem;
     overflow: hidden;
+     background: 
+        linear-gradient(
+          to bottom, 
+            #1f3976 0%, 
+            #1f3976 85%,  /* Solid blue up to 90% */
+            rgba(251, 252, 255, 0.019) 100% 
+        );
+         background-blend-mode: multiply;
   }
 
   .kinetic-text {
@@ -334,7 +379,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            color: #48bb78;
+            color: #2239bd;
             font-weight: bold;
             font-size: 0.9rem;
         }

@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-// FIXED ServiceCard component
+
 const ServiceCard = React.memo(({ title, description, items = [], link, imgSrc, imgAlt }) => (
   <div className="service-card">
     <img
@@ -46,11 +46,32 @@ const FAQItem = React.memo(({ question, answer, index, activeIndex, toggleFAQ })
 ));
 
 export default function Main() {
-  // FIXED FAQ toggle function
+
+    useEffect(() => {
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('active');
+                  }
+              });
+          }, {
+              threshold: 0.1,
+              rootMargin: '0px 0px -50px 0px'
+          });
+  
+          const slideElements = document.querySelectorAll('.slide-in');
+          slideElements.forEach(el => observer.observe(el));
+  
+          return () => {
+              slideElements.forEach(el => observer.unobserve(el));
+          };
+      }, []);
+
+  
   const [activeIndex, setActiveIndex] = useState(null);
   const toggleFAQ = useCallback((index) => {
     setActiveIndex(prev => prev === index ? null : index);
-  }, []); // Added empty dependency array
+  }, []); 
 
   // Service card data
   const services = [
@@ -82,10 +103,9 @@ export default function Main() {
 
   return (
     <div className="main-container">
-      {/* Pakistan Map Section - Now Responsive */}
       <div className="image-container">
         <div className="solar-content-wrapper">
-          <div className="solar-image-container">
+          <div className="solar-image-container slide-in slide-left delay-1">
             <img
               src="/images/Pakistan-map.svg"
               alt="Pakistan map"
@@ -102,7 +122,7 @@ export default function Main() {
           </div>
 
           {/* Right Content */}
-          <div className="solar-content">
+          <div className="solar-content slide-in slide-rigth delay-2">
             <h1>Premium Solar Solutions in Lahore</h1>
             <p className="solar-subtitle">
               Harness Pakistan's abundant sunlight with our certified solar systems
@@ -128,7 +148,7 @@ export default function Main() {
       </div>
 
       {/*-------------------------- Service Cards -----------------------------*/}
-      <div className="container">
+      <div className="container slide-in slide-up delay-2">
         <div className='center'>
           <h1 className="h1">Our Services</h1>
           <h5 className="service-line">Innovative Solar Solutions for Energy Independence</h5>
@@ -146,45 +166,45 @@ export default function Main() {
       {/*services ends here*/}
       <br />
       {/*---------------get in touch--------------*/}
-      <div className="solar-ready-container bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 px-6 rounded-xl shadow-xl max-w-4xl mx-auto my-8 text-center">
-        <h2 className="solar-ready-title text-3xl md:text-4xl font-bold mb-4">Ready to Switch to Solar?</h2>
-        <p className="solar-ready-desc text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
+      <div className="solar-ready-container slide-in slide-up delay-1 bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 px-6 rounded-xl shadow-xl max-w-4xl mx-auto my-8 text-center">
+        <h2 className="solar-ready-title slide-in slide-up delay-1 text-3xl md:text-4xl font-bold mb-4">Ready to Switch to Solar?</h2>
+        <p className="solar-ready-desc slide-in slide-up delay-2 text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-8">
           Unlock significant savings and energy independence with the power of <br />solar—join your neighbors who are already enjoying lower bills and a cleaner, sustainable future!
         </p>
-        <Link className="buttongetintouch" to='/contact'>Take the First Step</Link>
+        <Link className="buttongetintouch slide-in slide-up delay-3" to='/contact'>Take the First Step</Link>
       </div>
 
       {/*----------------why choose us-------------------*/}
       <section class="solar-services-section">
         <div class="container-choose-us">
           <div className="solar-text-content">
-            <p className="solar-subtitle1">Why Choose Our Solar Services?</p>
-            <h2 className="solar-title">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
-            <p classn="solar-description">
+            <p className="solar-subtitle1 slide-in slide-left delay-1">Why Choose Our Solar Services?</p>
+            <h2 className="solar-title slide-in slide-up delay-2">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
+            <p classn="solar-description slide-in slide-up delay-2">
               At [Your Company Name], we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
             </p>
             <ul class="solar-checklist">
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Expert Design & Consultation
               </li>
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> High-Quality Equipment
               </li>
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Certified & Experienced Installers
               </li>
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Seamless Installation Process
               </li>
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Reliable Ongoing Support
               </li>
-              <li>
+              <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Maximized Energy Savings
               </li>
             </ul>
           </div>
-          <div className="solar-image-content">
+          <div className="solar-image-content slide-in slide-left delay-2">
             <img src="/images/whychooseus.jpg" alt="Solar panel installation in progress" />
           </div>
         </div>
@@ -194,7 +214,7 @@ export default function Main() {
       <div className="features-section">
         <div className="cards-layout">
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-1">
             <i className="fas fa-drafting-compass box-icon"></i>
             <div className="box-text">
               <h3>Expert Design & Consultation</h3>
@@ -203,7 +223,7 @@ export default function Main() {
           </div>
 
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-3">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
@@ -211,7 +231,7 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-2">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
@@ -219,7 +239,7 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-2">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
@@ -227,7 +247,7 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-1">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
@@ -235,7 +255,7 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="feature-box">
+          <div className="feature-box slide-in slide-up delay-3">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
@@ -247,7 +267,7 @@ export default function Main() {
 
 
       {/**---------------frequent asked questions------------------ */}
-      <div className="faq-section">
+      <div className="faq-section slide-in slide-up delay-3">
         <div className="faq-header">
           <h2 className="faq-title">Frequently Asked Questions</h2>
           <p className="faq-subtitle">Find answers to common questions about solar energy solutions</p>

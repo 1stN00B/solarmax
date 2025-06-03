@@ -1,41 +1,60 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Services.css';
 import { Link } from 'react-router';
 
 const Services = () => {
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    const slideElements = document.querySelectorAll('.slide-in');
+    slideElements.forEach(el => observer.observe(el));
+
+    return () => {
+      slideElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div>
       <div className="services-hero">
-      <div className="kinetic-text">SERVICES</div>
-      
-      <div className="content-wrapper">
-        <div className="header-content">
-          <h1 className="title">
-            Professional <span className="highlight">Solutions</span><br/>
-            Tailored for Your Success
-          </h1>
-          <p className="subtext">
-            Discover comprehensive residential and commercial packages designed 
-            to transform your spaces with excellence.
-          </p>
+        <div className="kinetic-text slide-in slide-up">SERVICES</div>
+        
+        <div className="content-wrapper">
+          <div className="header-content slide-in slide-right delay-1">
+            <h1 className="title">
+              Professional <span className="highlight">Solutions</span><br/>
+              Tailored for Your Success
+            </h1>
+            <p className="subtext">
+              Discover comprehensive residential and commercial packages designed 
+              to transform your spaces with excellence.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-
-      {/*------------------------------ Process Section ------------------------------------*/}
+      {/* Process Section */}
       <section className="services__process">
         <div className="services__container">
           <div className="process__content">
-            <h2 className="process__title">How We Deliver Excellence</h2>
-            <p className="process__description">
+            <h2 className="process__title slide-in slide-left">How We Deliver Excellence</h2>
+            <p className="process__description slide-in slide-right delay-1">
               Our proven 4-step process ensures every client receives outstanding service
             </p>
 
             <div className="process__steps">
-              {[1, 2, 3, 4].map((step) => (
-                <div key={step} className="process__step">
+              {[1, 2, 3, 4].map((step, index) => (
+                <div key={step} className={`process__step slide-in ${index % 2 === 0 ? 'slide-left' : 'slide-right'} delay-${index % 3}`}>
                   <div className="process__step-number">{step}</div>
                   <div className="process__step-icon">
                     {step === 1 && '🎯'}
@@ -57,27 +76,22 @@ const Services = () => {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/**<a href="https://wa.me/+923168280051?text=can i get more info about the Packages?" target="_blank">
-        <button>
-          Chat on WhatsApp
-        </button>
-      </a> */}
- 
-{/**-------------------------------packages----------------------------------------- */}
-<div className="solar-packages-section">
-    <h1 className="section-title">Solar Power Packages</h1>
+      {/* Packages Section */}
+      <div className="solar-packages-section">
+        <h1 className="section-title slide-in slide-down">Solar Power Packages</h1>
 
-    {/* Residential Packages */}
-    <h2 className="package-category-title residential-category" id="residential">Residential Solar Packages</h2>
+        {/* Residential Packages */}
+        <h2 className="package-category-title residential-category slide-in slide-left delay-1" id="residential">
+          Residential Solar Packages
+        </h2>
 
-    <div className="packages-grid residential-packages-grid">
+        <div className="packages-grid residential-packages-grid">
         {/* HomeGuard Essential */}
-        <div className="package-card homeguard-essential">
+        <div className="package-card homeguard-essential slide-in slide-up delay-1">
             <div className="package-header">
                 <h3 className="package-name">HomeGuard Essential</h3>
                 <div className="package-capacity">3-kW</div>
@@ -131,7 +145,7 @@ const Services = () => {
               <h5>Things Included:</h5>
                 <li>Ac/Dc Wires, Breackers,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>1 Ac</li>
                 <li>2 Fans</li>
                 <li>10 Led Bulbs</li>
@@ -155,7 +169,7 @@ const Services = () => {
             </div>
         </div>
         {/* -------------------EcoSaver Plus ---------------------*/}
-        <div className="package-card ecosaver-plus">
+        <div className="package-card ecosaver-plus slide-in slide-up delay-2">
             <div className="package-header">
                 <h3 className="package-name">EcoSaver Plus</h3>
                 <div className="package-capacity">6-kW</div>
@@ -208,7 +222,7 @@ const Services = () => {
               <h5>Things Included:</h5>
                 <li>Ac/Dc Wires, Breackers, Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>2 Ac</li>
                 <li>4 Fans</li>
                 <li>15 Led Bulbs</li>
@@ -233,7 +247,7 @@ const Services = () => {
             </div>
         </div>
         {/* ----------------------LuxeSolar Elite ----------------------*/}
-        <div className="package-card luxesolar-elite">
+        <div className="package-card luxesolar-elite slide-in slide-up delay-1">
             <div className="premium-badge">Premium</div>
             <div className="package-header">
                 <h3 className="package-name">LuxeSolar Elite</h3>
@@ -287,7 +301,7 @@ const Services = () => {
                   <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>3 Ac</li>
                 <li>4 Fans</li>
                 <li>20 Led Bulbs</li>
@@ -312,7 +326,7 @@ const Services = () => {
             </div>
         </div>
         {/*----------------- SmartHome Solar+ ---------------------*/}
-        <div className="package-card smarthome-solar-plus">
+        <div className="package-card smarthome-solar-plus slide-in slide-up delay-2">
             <div className="package-header">
                 <h3 className="package-name">SmartHome Solar+</h3>
                 <div className="package-capacity">10-kW</div>
@@ -365,7 +379,7 @@ const Services = () => {
                 <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className="features-list">
                 <li>4 Ac</li>
                 <li>10 Fans</li>
                 <li>25 Led Bulbs</li>
@@ -391,12 +405,14 @@ const Services = () => {
         </div>
     </div>
 
-    {/* --------------------Commercial Packages------------------------ */}
-    <h2 className="package-category-title commercial-category" id="commercial">Commercial Solar Packages</h2>
+        {/* Commercial Packages */}
+        <h2 className="package-category-title commercial-category slide-in slide-right delay-1" id="commercial">
+          Commercial Solar Packages
+        </h2>
 
-    <div className="packages-grid commercial-packages-grid">
-        {/*-------------------------- CommercialMax Pro+--------------------------------*/}
-        <div className="package-card commercial-max-pro-plus">
+        <div className="packages-grid commercial-packages-grid">
+          {/* CommercialMax Pro+ */}
+          <div className="package-card commercial-max-pro-plus slide-in slide-up delay-1">
             <div className="package-header">
                 <h3 className="package-name">CommercialMax Pro+</h3>
                 <div className="package-capacity">50-kW</div>
@@ -449,7 +465,7 @@ const Services = () => {
                 <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>All Types of Machines</li>               
                   </ul>
             </ul>
@@ -467,9 +483,10 @@ const Services = () => {
                 <div className="commitment-title">Service Commitment</div>
                 <div className="commitment-text">10-year labor warranty, scalable for warehouses</div>
             </div>
-        </div>
-        {/* ---------------------------------IndustrialDurabilt X5-------------------------------- */}
-        <div className="package-card industrial-durabilt-x5">
+          </div>
+          
+          {/* IndustrialDurabilt X5 */}
+          <div className="package-card industrial-durabilt-x5 slide-in slide-up delay-2">
             <div className="package-header">
                 <h3 className="package-name">IndustrialDurabilt X5</h3>
                 <div className="package-capacity">100-kW</div>
@@ -522,7 +539,7 @@ const Services = () => {
                 <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>All Types of Machines</li>               
                   </ul>
             </ul>
@@ -540,9 +557,10 @@ const Services = () => {
                 <div className="commitment-title">Service Commitment</div>
                 <div className="commitment-text">15-year product replacement guarantee</div>
             </div>
-        </div>
-        {/*------------------------------------ EnterpriseScale -------------------------------*/}
-        <div className="package-card enterprise-scale-plus">
+          </div>
+          
+          {/* EnterpriseScale */}
+          <div className="package-card enterprise-scale-plus slide-in slide-up delay-1">
             <div className="premium-badge">Enterprise</div>
             <div className="package-header">
                 <h3 className="package-name">EnterpriseScale</h3>
@@ -599,8 +617,8 @@ const Services = () => {
             <ul className="features-list">
                 <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
-                <h5>Solar-powered appliances</h5>
-                  <ul>
+                <h5 >Solar-powered appliances</h5>
+                  <ul className='features-list'>
                 <li>All Types of Machines</li>               
                   </ul>
             </ul>
@@ -618,10 +636,11 @@ const Services = () => {
                 <div className="commitment-title">Service Commitment</div>
                 <div className="commitment-text">Priority support & carbon offset reporting tools</div>
             </div>
-        </div>
-        {/**----------------------------------EnterpriseScale+---------------------------------------- */}
-        <div className="package-card enterprise-scale-plus">
-            <div className="package-header">
+          </div>
+          
+          {/* EnterpriseScale+ */}
+          <div className="package-card enterprise-scale-plus slide-in slide-up delay-2">
+             <div className="package-header">
                 <h3 className="package-name">EnterpriseScale+</h3>
                 <div className="package-capacity">300-kW</div>
                 <div className="package-type">Enterprise Solution</div>
@@ -677,7 +696,7 @@ const Services = () => {
                 <h5>Things Included:</h5>
                 <li>Ac/Dc Wires ,Breackers ,Inverted Controled through App</li>
                 <h5>Solar-powered appliances</h5>
-                  <ul>
+                  <ul className='features-list'>
                 <li>All Types of Machines</li>               
                   </ul>
             </ul>
@@ -695,16 +714,14 @@ const Services = () => {
                 <div className="commitment-title">Service Commitment</div>
                 <div className="commitment-text">Priority support & carbon offset reporting tools</div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-
-{/**------------------------------------ends----------------------------------------- */}
+      </div>
 
       {/* Custom Solutions */}
       <section className="services__custom">
         <div className="services__container">
-          <div className="custom__content">
+          <div className="custom__content slide-in slide-up">
             <h3 className="custom__title">Need Custom Solutions?</h3>
             <p className="custom__text">We offer customized packages to suit specific requirements.</p>
             <Link className="custom__button" to="/contact">Request Consultation</Link>
@@ -712,18 +729,18 @@ const Services = () => {
         </div>
       </section>
 
-      {/*------------------- Benefits Section------------------------ */}
+      {/* Benefits Section */}
       <section className="services__benefits">
         <div className="services__container">
           <div className="benefits__content">
             <div className="benefits__text">
-              <h2 className="benefits__title">Why Choose Us</h2>
-              <p className="benefits__description">Your Trusted Partner in Solar Innovation</p>
+              <h2 className="benefits__title slide-in slide-left">Why Choose Us</h2>
+              <p className="benefits__description slide-in slide-right delay-1">Your Trusted Partner in Solar Innovation</p>
             </div>
             
             <div className="benefits__grid">
-              {['🌐 Cutting-Edge Technology', '⚡ Fast Response', '🤝 Price Match Promise', '💼 Professional Team', '📖 Transparent Process','🌍 Community Impact'].map((benefit) => (
-                <div key={benefit} className="benefit__card">
+              {['🌐 Cutting-Edge Technology', '⚡ Fast Response', '🤝 Price Match Promise', '💼 Professional Team', '📖 Transparent Process','🌍 Community Impact'].map((benefit, index) => (
+                <div key={benefit} className={`benefit__card slide-in ${index % 2 === 0 ? 'slide-left' : 'slide-right'} delay-${index % 3}`}>
                   <div className="benefit__icon">{benefit.split(' ')[0]}</div>
                   <h4 className="benefit__name">{benefit.split(' ').slice(1).join(' ')}</h4>
                   <p className="benefit__detail">
@@ -741,9 +758,8 @@ const Services = () => {
         </div>
       </section>
 
-
-      {/**------------------------------footer------------------------------------ */}
-       <footer className="solar-footer-gradient">
+      {/* Footer */}
+      <footer className="solar-footer-gradient">
         <div className="footer-gradient-container">
           <div className="footer-main-content">
             <div className="footer-branding">

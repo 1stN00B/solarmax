@@ -1,4 +1,52 @@
-/* Solar Contact Page Styles */
+/*animation*/
+/* Base class for all elements that should animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Upward slide animation (default for slide-in) */
+.animate-on-scroll.slide-in {
+    transform: translateY(30px); /* Starts slightly below */
+}
+
+/* Leftward slide animation */
+.animate-on-scroll.slide-in-left {
+    transform: translateX(-50px); /* Starts off to the left */
+}
+
+/* Rightward slide animation */
+.animate-on-scroll.slide-in-right {
+    transform: translateX(50px); /* Starts off to the right */
+}
+
+
+/* Active state for all animations */
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Moves to its final position */
+}
+
+/* Delay for staggered animations */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
+/*----------------------------end------------------------------*/
+
+
+
+
+
+
+
+
+
+/* Solar Contact*/
 .solar-contact-page {
   font-family: 'Poppins', sans-serif;
   color: #333;
