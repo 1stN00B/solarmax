@@ -33,6 +33,21 @@
 .slide-in.delay-1 { transition-delay: 0.2s; }
 .slide-in.delay-2 { transition-delay: 0.4s; }
 .slide-in.delay-3 { transition-delay: 0.6s; }
+
+/* Mobile Slide-in Animation */
+@media (max-width: 768px) {
+  .slide-in-mobile {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .slide-in-mobile.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*----------------------end-----------------------------*/
 
 .services-hero {
@@ -51,7 +66,6 @@
             #1f3976 85%,  /* Solid blue up to 90% */
             rgba(251, 252, 255, 0.019) 100% 
         );
-         background-blend-mode: multiply;
   }
 
   .kinetic-text {

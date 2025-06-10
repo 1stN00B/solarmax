@@ -28,7 +28,6 @@ const ServiceCard = React.memo(({ title, description, items = [], link, imgSrc, 
   </div>
 ));
 
-// FIXED FAQItem component
 const FAQItem = React.memo(({ question, answer, index, activeIndex, toggleFAQ }) => (
   <div className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
     <button className="faq-question" onClick={() => toggleFAQ(index)}>
@@ -141,7 +140,7 @@ export default function Main() {
             </div>
 
             <div className="solar-cta">
-              <button className="solar-btn primary">Get Free Estimate →</button>
+              <Link className="solar-btn primary" to="/contact">Get Free Estimate →</Link>
             </div>
           </div>
         </div>

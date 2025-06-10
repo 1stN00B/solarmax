@@ -100,7 +100,9 @@ const AutoHideNavbar = () => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/" onClick={handleNavLinkClick}>LOGO</Link>
+        <Link className="navbar-brand" to="/" onClick={handleNavLinkClick}>
+        <img src='/images/logo.png' className='logo' alt='logo'></img>
+        </Link>
         <button 
           className="navbar-toggler" 
           type="button" 
@@ -140,12 +142,10 @@ const AutoHideNavbar = () => {
                 to="/service" 
                 id="navbarDropdown"
                 onClick={(event) => {
-                  // On mobile, toggle dropdown instead of navigating
                   if (window.innerWidth <= 767) {
                     event.preventDefault();
                     handleDropdownToggle(event);
                   }
-                  // On desktop, just navigate (hover handles dropdown)
                 }}
               >
                 Services
