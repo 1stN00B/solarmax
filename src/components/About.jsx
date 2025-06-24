@@ -49,7 +49,7 @@ export default function About() {
             <section className="our-story slide-in slide-up delay-1">
                 <div className="container-ourstory">
                     <div className="row">
-                        <div className="col-md-6 slide-in slide-up delay-2">
+                        <div className="col-md-6 slide-in slide-up delay-1">
                             <h2>Our <span className="highlight-ourstory">Solar Journey</span></h2>
                             <div className="divider-line"></div>
 

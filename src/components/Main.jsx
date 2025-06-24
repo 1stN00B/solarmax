@@ -121,7 +121,7 @@ export default function Main() {
           </div>
 
           {/* Right Content */}
-          <div className="solar-content slide-in slide-rigth delay-2">
+          <div className="solar-content slide-in slide-rigth delay-1">
             <h1>Premium Solar Solutions in Lahore</h1>
             <p className="solar-subtitle">
               Harness Pakistan's abundant sunlight with our certified solar systems
@@ -147,7 +147,7 @@ export default function Main() {
       </div>
 
       {/*-------------------------- Service Cards -----------------------------*/}
-      <div className="container slide-in slide-up delay-2">
+      <div className="container slide-in slide-up delay-1">
         <div className='center'>
           <h1 className="h1">Our Services</h1>
           <h5 className="service-line">Innovative Solar Solutions for Energy Independence</h5>
@@ -180,7 +180,7 @@ export default function Main() {
             <p className="solar-subtitle1 slide-in slide-left delay-1">Why Choose Our Solar Services?</p>
             <h2 className="solar-title slide-in slide-up delay-2">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
             <p classn="solar-description slide-in slide-up delay-2">
-              At [Your Company Name], we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
+              At Solar Wings, we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
             </p>
             <ul class="solar-checklist">
               <li className='slide-in slide-right delay-3'>
@@ -190,7 +190,7 @@ export default function Main() {
                 <span className="checklist-icon">&#10004;</span> High-Quality Equipment
               </li>
               <li className='slide-in slide-right delay-3'>
-                <span className="checklist-icon">&#10004;</span> Certified & Experienced Installers
+                <span className="checklist-icon">&#10004;</span> Reliable Installation Crew
               </li>
               <li className='slide-in slide-right delay-3'>
                 <span className="checklist-icon">&#10004;</span> Seamless Installation Process
@@ -217,48 +217,47 @@ export default function Main() {
             <i className="fas fa-drafting-compass box-icon"></i>
             <div className="box-text">
               <h3>Expert Design & Consultation</h3>
-              <p>Customized solar solutions tailored to your property's unique needs and energy goals.</p>
+              <p>Customized solar solutions tailored to your property's unique needs and energy goals</p>
             </div>
           </div>
-
 
           <div className="feature-box slide-in slide-up delay-3">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
               <h3>High-Quality Equipment</h3>
-              <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <p>Premium solar panels and components backed by industry-leading 25-year performance warranties</p>
             </div>
           </div>
 
           <div className="feature-box slide-in slide-up delay-2">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-              <h3>High-Quality Equipment</h3>
-              <p>Premium solar panels and components with industry-leading performance warranties.</p>
-            </div>
-          </div>
-
-          <div className="feature-box slide-in slide-up delay-2">
-            <i className="fas fa-solar-panel box-icon"></i>
-            <div className="box-text">
-              <h3>High-Quality Equipment</h3>
-              <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>Reliable Installation Crew</h3>
+              <p>Our locally-based team completes projects on schedule with 98% customer satisfaction</p>
             </div>
           </div>
 
           <div className="feature-box slide-in slide-up delay-1">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-              <h3>High-Quality Equipment</h3>
-              <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>Seamless Installation Process</h3>
+              <p>Project managed from permit to activation with minimal disruption to your home</p>
             </div>
           </div>
 
           <div className="feature-box slide-in slide-up delay-3">
             <i className="fas fa-solar-panel box-icon"></i>
             <div className="box-text">
-              <h3>High-Quality Equipment</h3>
-              <p>Premium solar panels and components with industry-leading performance warranties.</p>
+              <h3>Reliable Ongoing Support</h3>
+              <p>*24/7 system monitoring + priority service response within 48 hours*</p>
+            </div>
+          </div>
+
+           <div className="feature-box slide-in slide-up delay-2">
+            <i className="fas fa-solar-panel box-icon"></i>
+            <div className="box-text">
+              <h3>Maximized Energy Savings</h3>
+              <p>*Production guarantees ensuring 90%+ output for 25 years of solar ROI*</p>
             </div>
           </div>
         </div>
@@ -266,7 +265,7 @@ export default function Main() {
 
 
       {/**---------------frequent asked questions------------------ */}
-      <div className="faq-section slide-in slide-up delay-2">
+      <div className="faq-section slide-in slide-up delay-1">
         <div className="faq-header">
           <h2 className="faq-title">Frequently Asked Questions</h2>
           <p className="faq-subtitle">Find answers to common questions about solar energy solutions</p>

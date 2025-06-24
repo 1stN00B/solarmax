@@ -456,7 +456,7 @@
         }
 
         .commitment-section {
-            background: linear-gradient(135deg, #1a237e, #283593);
+            background: linear-gradient(135deg, #F4A261, #283593);
             color: white;
             padding: 1rem;
             border-radius: 10px;
@@ -546,10 +546,11 @@
   text-decoration: none;
 }
 .custom__button:hover{
-    transition: 1;
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #5093d2,#F4F261);
 }
 
-/* Benefits Section */
+/* --------------------------Benefits Section */
 .services__benefits {
     padding: 20px;
   background: white;
