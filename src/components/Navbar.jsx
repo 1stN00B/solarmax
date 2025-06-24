@@ -33,9 +33,9 @@ const ModernNavbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       {/* Logo */}
       <div className="navbar-logo">
-        <Link to="/" onClick={handleNavLinkClick} aria-label="Homepage">
+        <a href="/" onClick={handleNavLinkClick} aria-label="Homepage">
           <img src="/images/logo.svg" alt="Logo" />
-        </Link>
+        </a>
       </div>
 
       {/* Navigation Links */}
