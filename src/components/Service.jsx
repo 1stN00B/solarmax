@@ -1,8 +1,25 @@
 import React, { useEffect } from 'react';
 import '../Services.css';
-import { Link } from 'react-router';
+import { Link,useLocation } from 'react-router-dom';
+
 
 const Services = () => {
+  const location = useLocation();
+
+  // Handle hash fragments on mount and when hash changes
+  useEffect(() => {
+    const hash = location.hash.substring(1); // Remove the '#'
+    if (hash === 'residential' || hash === 'commercial') {
+      // Scroll to the appropriate section
+      const element = document.getElementById(hash);
+      if (element) {
+        // Add a small delay to ensure smooth scrolling after render
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -810,7 +827,7 @@ const Services = () => {
                 <h4 className="footer-heading">Services</h4>
                 <ul className="footer-links custom-bullets">
                   <li><Link to="/service#residential">Residential</Link></li>
-                  <li><Link tp="/service#commercial">Commercial</Link></li>
+                  <li><Link to="/service#commercial">Commercial</Link></li>
                 </ul>
               </div>
 
