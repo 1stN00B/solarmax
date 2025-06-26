@@ -28,15 +28,6 @@
       "headers": {
         "Cache-Control": "no-cache, no-store, must-revalidate"
       },
-      {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://www.solarwings.xyz/$1",
-      "permanent": true
-    }
-  ]
-}
     }
   ]
 }
