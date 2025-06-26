@@ -1,47 +1,32 @@
 {
-    "version": 2,
-    "routes": [
-        {
-            "src": "/sitemap\\.xml",
-            "headers": {
-                "Content-Type": "application/xml",
-                "Cache-Control": "public, max-age=0, must-revalidate"
-            }
-        },
-        {
-            "src": "/robots\\.txt",
-            "headers": {
-                "Content-Type": "text/plain",
-                "Cache-Control": "public, max-age=3600"
-            }
-        },
-        {
-            "src": "/static/(.*)",
-            "headers": {
-                "Cache-Control": "public, max-age=31536000, immutable"
-            }
-        },
-        {
-            "src": "/(.*)",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "solarwings.xyz"
-                }
-            ],
-            "status": 301,
-            "headers": {
-                "Location": "https://www.solarwings.xyz/$1"
-            }
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html",
-            "headers": {
-                "Cache-Control": "no-cache, no-store, must-revalidate"
-            }
-        }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+  "version": 2,
+  "routes": [
+    {
+      "src": "/sitemap\\.xml",
+      "headers": {
+        "Content-Type": "application/xml",
+        "Cache-Control": "public, max-age=600"
+      }
+    },
+    {
+      "src": "/robots\\.txt",
+      "headers": {
+        "Content-Type": "text/plain",
+        "Cache-Control": "public, max-age=600"
+      }
+    },
+    {
+      "src": "/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    }
+  ]
 }
