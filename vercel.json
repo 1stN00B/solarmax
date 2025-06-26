@@ -1,18 +1,19 @@
 {
-  "version": 2,
   "routes": [
     {
       "src": "/sitemap\\.xml",
+      "dest": "/sitemap.xml",
       "headers": {
         "Content-Type": "application/xml",
-        "Cache-Control": "public, max-age=0, must-revalidate"
+        "Cache-Control": "public, max-age=600"
       }
     },
     {
       "src": "/robots\\.txt",
+      "dest": "/robots.txt",
       "headers": {
         "Content-Type": "text/plain",
-        "Cache-Control": "public, max-age=3600"
+        "Cache-Control": "public, max-age=600"
       }
     },
     {
@@ -23,25 +24,19 @@
     },
     {
       "src": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "solarwings.xyz"
-        }
-      ],
-      "status": 301,
-      "headers": {
-        "Location": "https://www.solarwings.xyz/$1"
-      }
-    },
-    {
-      "src": "/(.*)",
       "dest": "/index.html",
       "headers": {
         "Cache-Control": "no-cache, no-store, must-revalidate"
-      }
+      },
+      {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.solarwings.xyz/$1",
+      "permanent": true
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
+}
+    }
+  ]
 }
