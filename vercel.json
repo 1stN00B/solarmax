@@ -1,16 +1,16 @@
 {
   "version": 2,
   "routes": [
-    // Sitemap (ensure XML headers and fresh cache)
+    // Sitemap headers
     {
       "src": "/sitemap\\.xml",
       "headers": {
         "Content-Type": "application/xml",
-        "Cache-Control": "no-cache"  // Disable caching for Googlebot
+        "Cache-Control": "public, max-age=0, must-revalidate"
       }
     },
     
-    // Robots.txt (force text/plain)
+    // Robots.txt headers
     {
       "src": "/robots\\.txt",
       "headers": {
@@ -18,32 +18,31 @@
         "Cache-Control": "public, max-age=3600"
       }
     },
-
-    // Canonical redirects (critical for SEO)
-    {
-      "src": "/https://solarwings.xyz/(.*)",
-      "status": 301,
-      "headers": {
-        "Location": "https://www.solarwings.xyz/$1"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "status": 308,
-      "headers": {
-        "Location": "https://www.solarwings.xyz/$1"
-      }
-    },
-
-    // Static assets (long cache)
+    
+    // Static assets
     {
       "src": "/static/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
       }
     },
-
-    // Fallback (SPA support)
+    
+    // Canonical redirects (FIXED)
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "solarwings.xyz"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://www.solarwings.xyz/$1"
+      }
+    },
+    
+    // SPA fallback
     {
       "src": "/(.*)",
       "dest": "/index.html",
