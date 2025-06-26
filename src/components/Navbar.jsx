@@ -34,7 +34,7 @@ const ModernNavbar = () => {
       {/* Logo */}
       <div className="navbar-logo">
         <a href="/" onClick={handleNavLinkClick} aria-label="Homepage">
-          <img src="/images/logo.svg" alt="Logo" />
+          <img src="/images/Logo.png" alt="Logo" />
         </a>
       </div>
 

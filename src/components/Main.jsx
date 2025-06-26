@@ -179,7 +179,7 @@ export default function Main() {
           <div className="solar-text-content">
             <p className="solar-subtitle1 slide-in slide-left delay-1">Why Choose Our Solar Services?</p>
             <h2 className="solar-title slide-in slide-up delay-2">Your <span className="colorful">Trusted Partner</span> in <span className="colorful">Solar Solutions</span></h2>
-            <p classn="solar-description slide-in slide-up delay-2">
+            <p classn="solar-description slide-in slide-up delay-1">
               At Solar Wings, we specialize in providing comprehensive solar power solutions tailored to your needs. From initial consultation and design to installation and maintenance, we ensure a seamless transition to clean, renewable energy. Our commitment to quality and customer satisfaction makes us the ideal choice for your solar journey.
             </p>
             <ul class="solar-checklist">
@@ -357,7 +357,6 @@ export default function Main() {
               <span className="footer-logo">Solar Wings</span>
               <p className="footer-mission">Harnessing the sun's power for a sustainable future</p>
 
-              {/* Social Media Icons */}
               <ul className="social-wrapper">
                 <li className="social-icon facebook">
                   <span className="tooltip">Facebook</span>
@@ -369,7 +368,7 @@ export default function Main() {
                 </li>
                 <li className="social-icon linkedin">
                   <span className="tooltip">LinkedIn</span>
-                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/solar-wings-solution-483143361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
                     <svg height="1.2em" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
@@ -401,7 +400,7 @@ export default function Main() {
                 <h4 className="footer-heading">Services</h4>
                 <ul className="footer-links custom-bullets">
                   <li><Link to="/service#residential">Residential</Link></li>
-                  <li><Link to="/Service#commercial">Commercial</Link></li>
+                  <li><Link to="/service#commercial">Commercial</Link></li>
                 </ul>
               </div>
 
@@ -409,16 +408,22 @@ export default function Main() {
                 <h4 className="footer-heading">Contact</h4>
                 <ul className="footer-contact">
                   <li className="contact-item">
-                    <svg className="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z" /></svg>
-                     solarwingssolution@gmail.com 
+                    <svg className="contact-icon" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z" />
+                    </svg>
+                    solarwingsolution@gmail.com
                   </li>
                   <li className="contact-item">
-                    <svg className="contact-icon" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" /></svg>
-                    +92 (329) 0806908
+                    <svg className="contact-icon" viewBox="0 0 24 24">
+                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                    </svg>
+                    +92 329-0806908
                   </li>
                   <li className="contact-item">
-                    <svg className="contact-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
-                    89-3-BII Township Lahore
+                    <svg className="contact-icon" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    89-3-BII Townre
                   </li>
                 </ul>
               </div>
@@ -426,7 +431,7 @@ export default function Main() {
           </div>
 
           <div className="footer-bottom">
-            <p className="copyright">© {new Date().getFullYear()} Z/F Solar. All rights reserved.</p>
+            <p className="copyright">© {new Date().getFullYear()} Solar Wings Solar. All rights reserved.</p>
           </div>
         </div>
       </footer>
