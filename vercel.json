@@ -11,7 +11,7 @@
       "src": "/sitemap\\.xml",
       "headers": {
         "Content-Type": "application/xml",
-        "Cache-Control": "public, max-age=600"
+        "Cache-Control": "public, max-age=600,no-cache, no-store, must-revalidate"
       }
     },
     {
@@ -39,6 +39,19 @@
       "headers": {
         "Cache-Control": "no-cache, no-store, must-revalidate",
         "X-Vercel-Cache": "BYPASS"
+      }
+    },
+    {
+      "src": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "solarwings.xyz"
+        }
+      ],
+      "status": 301,
+      "headers": {
+        "Location": "https://www.solarwings.xyz/:path*"
       }
     }
   ]
