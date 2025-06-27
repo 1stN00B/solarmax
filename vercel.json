@@ -33,6 +33,13 @@
       "headers": {
         "Cache-Control": "no-cache, no-store, must-revalidate"
       }
+    },
+    {
+      "src": "/sitemap\\.xml",
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "X-Vercel-Cache": "BYPASS"
+      }
     }
   ]
 }
