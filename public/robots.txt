@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://www.solarwings.xyz/sitemap.xml
+Sitemap: https://www.solarwings.xyz/sitemap-new.xml
