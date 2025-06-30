@@ -3,14 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- Homepage (Highest priority) -->
   <url>
     <loc>https://www.solarwings.xyz/</loc>
     <lastmod>2024-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.solarwings.xyz/images/Logo.png</image:loc>
+      <image:loc>https://www.solarwings.xyz/images/logo.png</image:loc>
       <image:title>SolarWings - Premium Solar Solutions</image:title>
     </image:image>
     <xhtml:link rel="canonical" href="https://www.solarwings.xyz/" />
@@ -22,6 +22,10 @@
     <lastmod>2024-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.solarwings.xyz/images/service-hero.jpg</image:loc>
+      <image:title>Our Solar Energy Services</image:title>
+    </image:image>
   </url>
 
   <!-- About Page -->
@@ -30,6 +34,10 @@
     <lastmod>2024-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.solarwings.xyz/images/about-team.jpg</image:loc>
+      <image:title>Our Expert Solar Team</image:title>
+    </image:image>
   </url>
 
   <!-- Contact Page -->
@@ -39,7 +47,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.solarwings.xyz/images/contactus.jpg</image:loc>
+      <image:loc>https://www.solarwings.xyz/images/contact-map.jpg</image:loc>
       <image:title>Contact Our Solar Experts</image:title>
     </image:image>
   </url>
