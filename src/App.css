@@ -343,6 +343,11 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .hero-container{
+    height: 300px !important;
+    width: 100%;
+  }
+
   .hero-content {
     left: 5%;
     right: 5%;
@@ -350,6 +355,7 @@ body {
   }
   
   .hero-content h1 {
+    padding-top: 20px;
     font-size: 2.5rem;
   }
   
@@ -811,11 +817,16 @@ body {
 }
 
 @media (max-width: 768px) {
+   .container{
+    padding: 10px 0;
+   }
+
    .services-container {
     display: grid;
     grid-template-columns: 1fr; /* Makes cards stack in rows */
     gap: 2rem; /* Keeps spacing between cards */
     padding: 0 2rem;
+    margin-bottom: 0px;
    }
   
   .h1 {
@@ -824,6 +835,10 @@ body {
   
   .service-line {
     font-size: 1.1rem;
+  }
+
+  .service-button-mainpage{
+    margin-top: 0%;
   }
 }
 /*ends here*/
@@ -852,6 +867,7 @@ body {
   font-size: 1.2rem;
   text-align: center;
   color: floralwhite;
+  padding-bottom: 10px;
 }
 
 /* Solar Ready Button */
@@ -869,7 +885,7 @@ body {
   cursor: pointer;
   color: black;
   z-index: 1;
-  margin: 0 auto;
+  margin:  0 auto;
   display: block;
   width: fit-content;
   border: none;
@@ -938,6 +954,7 @@ body {
   
   .solar-ready-desc {
     font-size: 0.98rem;
+    margin-bottom: 2px;
   }
 }
 
@@ -1045,6 +1062,10 @@ body {
     .solar-image-content {
       flex: 1 1 100%; /* Allow them to take full width */
       min-width: unset; /* Remove min-width constraint */
+    }
+
+    .solar-image-content img{
+      height: 400px;
     }
     
     .solar-title {

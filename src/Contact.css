@@ -427,9 +427,14 @@
   .form-wrapper {
     padding: 2rem;
   }
+
+  .process-section{
+    padding-bottom: 0;
+  }
   
   .process-steps {
     grid-template-columns: 1fr;
+    gap:8px;
   }
 }
 

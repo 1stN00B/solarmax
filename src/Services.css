@@ -550,6 +550,13 @@
   background: linear-gradient(135deg, #5093d2,#F4F261);
 }
 
+@media (max-width: 768px) {
+.services__custom{
+  padding: 30px 0;
+  margin: 20px 0;
+}  
+}
+
 /* --------------------------Benefits Section */
 .services__benefits {
     padding: 20px;
@@ -601,6 +608,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .benefits__text{
+    padding-top: 10px;
+}
+
   .services__main-title {
     font-size: 2.2rem;
   }
