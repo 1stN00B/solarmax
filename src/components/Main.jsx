@@ -28,21 +28,6 @@ const ServiceCard = React.memo(({ title, description, items = [], link, imgSrc, 
   </div>
 ));
 
-const FAQItem = React.memo(({ question, answer, index, activeIndex, toggleFAQ }) => (
-  <div className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
-    <button className="faq-question" onClick={() => toggleFAQ(index)}>
-      {question}
-      <svg className="faq-icon" viewBox="0 0 24 24">
-        <path d="M19 9l-7 7-7-7" />
-      </svg>
-    </button>
-    {activeIndex === index && (
-      <div className="faq-answer">
-        <p>{answer}</p>
-      </div>
-    )}
-  </div>
-));
 
 export default function Main() {
 
