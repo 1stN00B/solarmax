@@ -59,7 +59,7 @@ Service Needed: ${formData.service}\n
 Message: ${formData.message}\n\
 _This inquiry was sent via your website_`;
 
-        const whatsappUrl = `https://wa.me/03290806908?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappUrl = `https://wa.me/03130402159?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappUrl, '_blank');
         setFormData({ name: '', email: '', phone: '', message: '', service: '' });
     };
